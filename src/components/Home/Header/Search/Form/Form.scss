@@ -1,0 +1,48 @@
+@import 'scss/variables.scss';
+
+.search {
+	padding: 12px;
+	border: 1px solid $blue;
+	border-radius: 10px;
+	cursor: pointer;
+	display: flex;
+	flex: 1 1 auto;
+	position: relative;
+	
+	&__input {
+		margin-left: 5px;
+		width: 100%;
+		font-size: 18px;
+		color: $grey;
+	}
+
+	::-webkit-input-placeholder {
+		/* WebKit browsers */
+		font-size: 18px;
+		color: $grey;
+	}
+
+	:-moz-placeholder {
+		/* Mozilla Firefox 4 to 18 */
+		font-size: 18px;
+		color: $grey;
+	}
+
+	::-moz-placeholder {
+		/* Mozilla Firefox 19+ */
+		font-size: 18px;
+		color: $grey;
+	}
+
+	:-ms-input-placeholder {
+		/* Internet Explorer 10+ */
+		font-size: 18px;
+		color: $grey;
+	}
+
+	&__icon {
+		position: relative;
+		left: 0;
+		width: 18px;
+	}
+}

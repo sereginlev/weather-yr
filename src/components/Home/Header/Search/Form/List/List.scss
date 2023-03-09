@@ -1,0 +1,156 @@
+@import 'scss/variables.scss';
+
+.search__list {
+	position: absolute;
+	border-radius: 20px;
+	cursor: pointer;
+	width: 100%;
+	top: 60px;
+	left: 0;
+	background-color: #fff;
+	box-shadow: 2px 2px rgb(33 41 43 / 10%);
+	z-index: 2;
+
+	.list__item {
+		padding: 20px;
+		font-size: 20px;
+		position: relative;
+		display: flex;
+		align-items: center;
+
+		&:after {
+			content: '';
+			border-bottom: 1px solid $lightGrey;
+			width: 100%;
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+
+		&:before {
+			content: url('/assets/icons/common icons/recent.svg');
+			display: inline-block;
+			margin-right: 10px;
+		}
+
+		&:last-child:after {
+			display: none;
+		}
+
+		&:last-child {
+			border-radius: 0 0 20px 20px;
+		}
+
+		&:hover {
+			background-color: $blue;
+			color: #fff;
+
+			&:before {
+				content: url('/assets/icons/common icons/color icons/recent.svg');
+			}
+		}
+
+	}
+	
+	.nearby {
+		padding: 20px;
+		font-size: 20px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		color: $blue;
+
+		&:after {
+			content: '';
+			border-bottom: 1px solid $lightGrey;
+			width: 100%;
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+
+		&:before {
+			content: url('/assets/icons/common icons/color icons/nearby.svg');
+			display: inline-block;
+			margin-right: 10px;
+		}
+
+		&:hover {
+			border-radius: 20px 20px 0 0;
+			background-color: $blue;
+			color: #fff;
+
+			&:before {
+				content: url('/assets/icons/common icons/color icons/nearby-white.svg');
+			}
+		}
+	}
+
+	._nearby {
+		padding: 20px;
+		font-size: 20px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		color: $blue;
+
+		&:before {
+			content: url('/assets/icons/common icons/color icons/nearby.svg');
+			display: inline-block;
+			margin-right: 10px;
+		}
+
+		&:hover {
+			border-radius: 20px 20px 20px 20px;
+			background-color: $blue;
+			color: #fff;
+
+			&:before {
+				content: url('/assets/icons/common icons/color icons/nearby-white.svg');
+			}
+		}
+	}
+
+	.list__item-fav {
+		padding: 20px;
+		font-size: 20px;
+		position: relative;
+		display: flex;
+		align-items: center;
+
+		&:after {
+			content: '';
+			border-bottom: 1px solid $lightGrey;
+			width: 100%;
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+		&:before {
+			content: url('/assets/icons/common icons/favorite-color.svg');
+			display: inline-block;
+			margin-right: 10px;
+		}
+
+		&:last-child:after {
+			display: none;
+		}
+
+		&:last-child {
+			border-radius: 0 0 20px 20px;
+		}
+
+		&:hover {
+			background-color: $blue;
+			color: #fff;
+
+			&:before {
+				content: url('/assets/icons/common icons/favorite.svg');
+			}
+		}
+
+	}
+}

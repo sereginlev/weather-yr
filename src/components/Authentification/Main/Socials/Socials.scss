@@ -1,0 +1,30 @@
+@import 'scss/variables.scss';
+
+.socials__link {
+	padding: 16px;
+	display: block;
+	line-height: 24px;
+	border-radius: 10px;
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(0, 0, 0);
+	margin-bottom: 10px;
+	font-size: 18px;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&:hover {
+		background-color: rgb(247, 247, 247);
+	}
+
+	&:active {
+		transition: all 0s ease 0s;
+		color: rgb(118, 118, 118);
+	}
+
+	svg {
+		margin-right: 10px;
+	}
+}

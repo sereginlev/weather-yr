@@ -1,0 +1,74 @@
+@import 'scss/_variables.scss';
+
+.block__form {
+	display: flex;
+	flex-direction: column;
+	width: 700px;
+
+	.form__label {
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 1.6rem;
+		margin-bottom: 10px;
+	}
+
+	div {
+		position: relative;
+	}
+
+	.form__input {
+		padding: 12px 20px;
+		border: 1px solid #56616c;
+		border-radius: 10px;
+		font-size: 18px;
+		color: $black;
+		margin-bottom: 20px;
+		font-weight: 600;
+		width: 100%;
+	}
+
+	.form__input-icon {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		right: 20px;
+		top: 37px;
+		cursor: pointer;
+	}
+
+	.form__link {
+		text-decoration: underline;
+		font-size: 14px;
+		font-weight: 500;
+		right: 0;
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 15px;
+		margin-top: -5px;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.form__btn {
+		padding: 16px;
+		font-size: 20px;
+		font-weight: 600;
+		background-color: $black;
+		color: #fff;
+		border-radius: 10px;
+		text-align: center;
+		margin-bottom: 20px;
+
+		&:hover {
+			background-color: rgb(51, 51, 51);
+		}
+
+		&:active {
+			transition: all 0s ease 0s;
+			background-color: rgb(102, 102, 102);
+		}
+	}
+}

@@ -1,0 +1,39 @@
+@import 'scss/variables.scss';
+
+.headers {
+	display: flex;
+	position: relative;
+	margin-bottom: 4px;
+
+	&:after {
+		content: '';
+		border-bottom: 1px solid $lightGrey;
+		width: 100%;
+		display: block;
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+	}
+
+	.empty {
+		flex: 1 1 17%;
+	}
+
+	.times {
+		display: flex;
+		flex: 1 1 30%;
+		justify-content: space-between;
+		margin-right: 200px;
+	}
+
+	.weather {
+		display: flex;
+		flex: 1 1 25%;
+		justify-content: space-between;
+	}
+
+	.text {
+		font-size: 16px;
+		opacity: 0.8;
+	}
+}
