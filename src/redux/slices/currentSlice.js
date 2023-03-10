@@ -5,7 +5,7 @@ export const fetchCurrent = createAsyncThunk(
 	'current/fetchCurrent',
 	async (location, rejectWithValue) => {
 			try {
-				const { data } = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=d88c8afef3a846359c1171727232002&${location}&days=9`)
+				const { data } = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&${location}&days=9`)
 				
 				return data;
 			} catch (error) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
@@ -11,6 +11,8 @@ function Socials() {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
+	const { users } = useSelector(state => state.users)
+
 	//===вход с помощью гугл================================================================================================================
 	const handleSignInGoogle = () => {
 		const provider = new GoogleAuthProvider();
@@ -18,17 +20,58 @@ function Socials() {
 
 		signInWithPopup(auth, provider)
 			.then(({ user }) => {
-				const newUser = {
-					email: user.email.toLowerCase(),
-					token: user.accessToken,
-					id: user.uid,
-					isAuth: true,
-					favoriteItems: [],
-					locations: []
-				};
-				dispatch(setUser(newUser));
-				dispatch(setCurrentUser(newUser));
-				navigate('/');
+				if (users.length > 0) {
+					for (let i = 0; i< users.length; i++) {
+						if (users[i].id === user.uid) {
+							dispatch(setCurrentUser({
+								email: user.email.toLowerCase(),
+								token: user.accessToken,
+								id: user.uid,
+								isAuth: true,
+								favoriteItems: users[i].favoriteItems,
+								locations: users[i].locations
+							}));
+							navigate('/');
+							break
+						} else {
+							dispatch(setUser({
+								email: user.email.toLowerCase(),
+								token: user.accessToken,
+								id: user.uid,
+								isAuth: true,
+								favoriteItems: [],
+								locations: []
+							}));
+							dispatch(setCurrentUser({
+								email: user.email.toLowerCase(),
+								token: user.accessToken,
+								id: user.uid,
+								isAuth: true,
+								favoriteItems: [],
+								locations: []
+							}));
+							navigate('/');
+						}
+					}
+				} else {
+					dispatch(setUser({
+						email: user.email.toLowerCase(),
+						token: user.accessToken,
+						id: user.uid,
+						isAuth: true,
+						favoriteItems: [],
+						locations: []
+					}));
+					dispatch(setCurrentUser({
+						email: user.email.toLowerCase(),
+						token: user.accessToken,
+						id: user.uid,
+						isAuth: true,
+						favoriteItems: [],
+						locations: []
+					}));
+					navigate('/');
+				}
 			})
 			.catch(error => {
 				const errorMessage = error.message;

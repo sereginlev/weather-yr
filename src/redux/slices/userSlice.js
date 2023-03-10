@@ -1,12 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { ActionCodeOperation } from "firebase/auth";
 
 export const fetchFavorites = createAsyncThunk(
 	'user/fetchFavorites',
 	async function (locations) {
 		const items = [];
 		for (let i = 0; i < locations.length; i++) {
-			await fetch(`http://api.weatherapi.com/v1/current.json?key=d88c8afef3a846359c1171727232002&q=${locations[i]}`)
+			await fetch(`http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${locations[i]}`)
 			.then(res => res.json())
 			.then(data => items.push(data))
 			.catch((e) => {
@@ -42,8 +41,10 @@ export const userSlice = createSlice({
 			state.currentUser.locations.push(action.payload);
 		},
 		removeLocation(state, action) {
-			state.users.locations = state.users.locations.filter(item => item !== action.payload);
+			state.users.map(item => item.id === state.currentUser.id ? item.locations = item.locations.filter(el => el !== action.payload) : null);
+			state.users.map(item => item.id === state.currentUser.id ? item.favoriteItems = item.favoriteItems.filter(el => el !== action.payload) : null);
 			state.currentUser.locations = state.currentUser.locations.filter(item => item !== action.payload);
+			state.currentUser.favoriteItems = state.currentUser.favoriteItems.filter(item => item !== action.payload);
 		}
 	},
 	extraReducers: {

@@ -11,7 +11,7 @@ function Values({ item }) {
 			</p>
 
 			{
-				item.day.totalprecip_mm === 0 ?
+				Math.round(item.day.totalprecip_mm) === 0 ?
 					<></>
 					:
 					<div className='values__precip precip'>

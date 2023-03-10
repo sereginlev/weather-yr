@@ -11,7 +11,7 @@ function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby }) {
 	const listRef = React.useRef(); // ссылка на список найденных городов
 
 	const { searchItems } = useSelector(state => state.search); // массив из searchSlice(список городов, которые ищет пользователь)
-	const { favoriteItems } = useSelector(state => state.users.currentUser); // массив из координат любимых городов
+	const { favoriteItems } = useSelector(state => state.users.currentUser); // массив из данных о погоде любимых городов
 
 	//===при клике на список с избранными городами выводит его в Location==================================================================
 	const onClickFavorite = (e) => {
@@ -52,7 +52,7 @@ function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby }) {
 	return (
 		<ul className='search__list' ref={listRef} onClick={onClickFoundItem}>
 			{
-				searchValue.length > 0 ?
+				searchValue.length > 0 || favoriteItems.length > 0 ?
 					<li className='nearby' >
 						Nearby
 					</li>

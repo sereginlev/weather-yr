@@ -3,19 +3,23 @@
 .values {
 	display: flex;
 	flex: 0 0 24%;
-	justify-content: space-between;	
+	justify-content: space-between;
 	margin-left: 20px;
 	margin-right: 50px;
 
 	.temp {
+		width: 98px;
+		margin-left: -15px;
+		margin-right: 10px;
 		font-size: 24px;
-
 		&__text {
 			color: $red;
 		}
 	}
 
 	.precip {
+		width: 65px;
+
 		&__value {
 			font-size: 24px;
 			color: $blue;

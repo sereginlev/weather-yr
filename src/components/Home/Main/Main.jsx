@@ -6,7 +6,7 @@ import './Main.scss';
 import Forecast from './Forecast/Forecast';
 
 function Main() {
-
+	
 	return (
 		<div className='main _container'>
 				<Forecast />
