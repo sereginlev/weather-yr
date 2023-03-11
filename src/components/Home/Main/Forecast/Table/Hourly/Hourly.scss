@@ -1,0 +1,50 @@
+@import 'scss/variables.scss';
+
+.hourly__wrapper {
+	width: 100%;
+	height: auto;
+	background-color: rgba(33, 41, 43, 0.3);
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 14px 190px;
+
+	.hourly {
+		background-color: $white;
+		width: 100%;
+		height: 100%;
+		border-radius: 8px;
+		box-shadow: rgb(0 0 0 / 10%) 2px 0.125em 0.1875em;
+		padding: 70px 100px;
+		position: relative;
+
+
+		.hourly__header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 30px;
+
+			.hourly__title {
+				font-size: 25px;
+				font-weight: 400;
+			}
+
+			.hourly__icon {
+				cursor: pointer;
+	
+				&:hover {
+					background-color: rgba(0, 110, 219, 0.1);
+					path {
+						stroke: $blue;
+					}
+				}
+	
+				&:active {
+					background-color: rgba(0, 110, 219, 0.2);
+				}
+			}
+		}
+
+	}
+}

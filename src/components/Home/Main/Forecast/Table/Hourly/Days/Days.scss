@@ -1,0 +1,10 @@
+@import 'scss/variables.scss';
+
+.date {
+	flex: 0 0 15%;
+
+	&__text {
+		font-size: 20px;
+		padding-left: 15px;
+	}
+}

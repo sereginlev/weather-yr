@@ -7,13 +7,10 @@ function Days({ item }) {
 	const month = ['January', 'February', 'March', 'April', 'May', 'June', 'Jule', 'August', 'September', 'October', 'November', 'December'];
 	const today = days[new Date().getDay()]; // получение сегодняшнего дня недели, чтобы вывести Today
 
-	// const date = today === days[new Date(item.date).getDay()] ? 'Today' : days[new Date(item.date).getDay()]} {new Date(item.date).getDate()} {month[new Date(item.date).getMonth()];
 	return (
-		<div className='item__date date'>
-			<p className='date__text'>
+		<h2 className='hourly__title'>
 				{today === days[new Date(item.date).getDay()] ? 'Today' : days[new Date(item.date).getDay()]} {new Date(item.date).getDate()} {month[new Date(item.date).getMonth()]}
-			</p>
-		</div>
+		</h2>
 	)
 }
 
