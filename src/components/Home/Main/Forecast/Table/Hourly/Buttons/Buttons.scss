@@ -1,0 +1,15 @@
+.hourly-table__buttons {
+	display: flex;
+	position: relative;
+	align-items: center;
+
+	.next {
+		position: absolute;
+		right: 0;
+	}
+
+	.btn__icon {
+		width: 18px;
+		height: 18px;
+	}
+}

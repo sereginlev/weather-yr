@@ -1,0 +1,25 @@
+.hourly-table__sun {
+	display: flex;
+	justify-content: center;
+
+	.sun {
+		text-align: center;
+
+		&__text {
+			font-size: 20px;
+			margin-bottom: 5px;
+		}
+
+		&__icon {
+			margin-right: 5px;
+		}
+
+		&__time {
+			font-size: 16px;
+		}
+
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+}
