@@ -3,7 +3,6 @@
 .hourly-table {
 	width: 100%;
 
-
 	&__header {
 		display: flex;
 		position: relative;
@@ -49,6 +48,8 @@
 
 	.hourly-table__values {
 		margin-bottom: 30px;
+		overflow-y: scroll;
+		height: 550px;
 
 		li {
 			position: relative;

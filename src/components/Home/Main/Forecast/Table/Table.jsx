@@ -38,7 +38,7 @@ function Table({ forecast }) {
 			
 			{
 				isHourly &&
-				<Hourly setIsHourly={setIsHourly} item={forecast.forecastday[index]} forecast={forecast.forecastday}/>
+				<Hourly setIsHourly={setIsHourly} item={forecast.forecastday[index]} forecast={forecast.forecastday} index={index} setIndex={setIndex}/>
 			}
 		</div>
 	)

@@ -7,7 +7,7 @@ import windDirection from 'assets/icons/common icons/wind-direction.svg';
 function Table({ item, date }) {
 	const currentHour = new Date().getHours();
 	const currentDate = new Date().getDate();
-	console.log(currentDate, date)
+
 	return (
 		<div className='hourly__table hourly-table'>
 			<div className='hourly-table__header'>
