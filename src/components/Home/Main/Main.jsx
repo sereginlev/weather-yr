@@ -9,7 +9,7 @@ function Main() {
 	
 	return (
 		<div className='main _container'>
-				<Forecast />
+			<Forecast />
 		</div>
 	)
 }
