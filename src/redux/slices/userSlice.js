@@ -5,7 +5,8 @@ export const fetchFavorites = createAsyncThunk(
 	async function (locations) {
 		const items = [];
 		for (let i = 0; i < locations.length; i++) {
-			await fetch(`http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${locations[i]}`)
+			// await fetch(`http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${locations[i]}`)
+			await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${locations[i]}&days=3`)
 			.then(res => res.json())
 			.then(data => items.push(data))
 			.catch((e) => {
