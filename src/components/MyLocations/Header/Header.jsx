@@ -11,7 +11,7 @@ function Header() {
 	const { email } = useSelector(state => state.users.currentUser);
 
 	return (
-		<div className='header'>
+		<div className='header-mylocations'>
 			<div className='_container'>
 				<div className='header__block'>
 					{

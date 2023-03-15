@@ -17,7 +17,7 @@ function Location({ isNearby }) {
 	const { location: currentLocation } = useSelector(state => state.current.currentItem);
 	const { location: foundLocation } = useSelector(state => state.found.foundItem);
 	const { isAuth } = useSelector(state => state.users.currentUser);
-
+	console.log(locations);
 	//===добавление города в избранные города (хранится в локал сторедж через userSlice). дальше будет использоваться для вывода погодных условий на другой странице===================
 	const addFavLocation = (location) => {
 		const coords = `${location.lat},${location.lon}`;

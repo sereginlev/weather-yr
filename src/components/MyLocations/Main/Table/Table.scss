@@ -17,6 +17,35 @@
 		position: relative;
 		justify-content: space-between;
 		
+		.item__block {
+			display: flex;
+			align-items: center;
+			flex: 0 0 95%;
+
+			.item__title {
+				font-size: 20px;
+				flex: 0 0 60%;
+				margin-left: 10px;
+			}
+
+			.day {
+				display: flex;
+				align-items: center;
+				flex: 0 0 14%;
+	
+				&__temp {
+					font-size: 20px;
+					margin-left: 5px;
+				}
+				.plus {
+					color: $red;
+				}
+				.minus{
+					color: $blue;
+				}
+			}
+		}
+		
 		&:after {
 			content: '';
 			border-bottom: 1px solid $lightGrey;
@@ -31,29 +60,5 @@
 			display: flex;
 			cursor: pointer;
 		}
-
-		&__title {
-			font-size: 20px;
-			flex: 0 0 50%;
-			margin-left: 10px;
-		}
-
-		.day {
-			display: flex;
-			align-items: center;
-
-			&__temp {
-				font-size: 20px;
-				margin-left: 5px;
-			}
-			.plus {
-				color: $red;
-			}
-			.minus{
-				color: $blue;
-			}
-		}
-
-		
 	}
 }

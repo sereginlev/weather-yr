@@ -18,42 +18,46 @@ function Table() {
 	//===переменная, для отображения дней недели в заголовке таблицы========================================================================
 	const forecastday = favoriteItems && favoriteItems.map(item => item.forecast.forecastday);
 
-	const onClickItem = (location) => {
+	//===перейти на страницу прогноза любимого города при клике на него=====================================================================
+	const onClickItem = (location, e) => {
 		const coords = `${location.lat},${location.lon}`;
 
 		dispatch(fetchFound(coords));
 		navigate('/');
 	}
-	console.log(favoriteItems)
+
 	return (
 		<div className='main-block__table table'>
 
 			{
-				favoriteItems.length === 0 ?
+					favoriteItems &&
+					favoriteItems.length === 0 && forecastday.length === 0 ?
 					<p className='table__text'>You don't have favorite locations.</p>
 					:
 					<>
-						<Days item={forecastday[0]} />
+						<Days item={forecastday} />
 
 						<ul className='table__values values-table'>
 							{
 								favoriteItems &&
 								favoriteItems.map((item, index) => (
-									<li className='values-table__item item' key={index} onClick={() => onClickItem(item.location)}>
-										<p className='item__title'>{item.location.name}</p>
-										{
-											item.forecast.forecastday.map((elem, i) => (
-												<div className='item__day day' key={i}>
-													<img className='day__icon' src={elem.day.condition.icon} alt={elem.day.condition.text} />
-													{
-														Math.round(elem.day.avgtemp_c) > 0 ?
-															<span className='day__temp plus'>{Math.round(elem.day.avgtemp_c)}°</span>
-															:
-															<span className='day__temp minus'>{Math.round(elem.day.avgtemp_c)}°</span>
-													}
-												</div>
-											))
-										}
+									<li className='values-table__item item' key={index} >
+										<div className='item__block' onClick={(e) => onClickItem(item.location, e)}>
+											<p className='item__title'>{item.location.name}</p>
+											{
+												item.forecast.forecastday.map((elem, i) => (
+													<div className='item__day day' key={i}>
+														<img className='day__icon' src={elem.day.condition.icon} alt={elem.day.condition.text} />
+														{
+															Math.round(elem.day.avgtemp_c) > 0 ?
+																<span className='day__temp plus'>{Math.round(elem.day.avgtemp_c)}°</span>
+																:
+																<span className='day__temp minus'>{Math.round(elem.day.avgtemp_c)}°</span>
+														}
+													</div>
+												))
+											}
+										</div>
 										<Button location={item.location} />
 									</li>
 								))
@@ -61,8 +65,6 @@ function Table() {
 						</ul>
 					</>
 			}
-
-
 		</div>
 	)
 }

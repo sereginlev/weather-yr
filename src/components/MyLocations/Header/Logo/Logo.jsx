@@ -11,6 +11,7 @@ function Logo() {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
+	//===перейти на главную страницу и показать там прогноз по текущим координатам=========================================================
 	const onClickLogo = () => {
 		dispatch(fetchFound({}))
 		navigate('/');

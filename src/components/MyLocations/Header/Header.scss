@@ -1,12 +1,6 @@
 @import 'scss/variables.scss';
 
-.wrapper {
-	box-shadow: rgb(0 0 0 / 10%) 0px 0.125em 0.1875em;
-}
-
-.header {
-	background-color: #fff;	
-	box-shadow: rgb(0 0 0 / 10%) 0px 0.125em 0.1875em;
+.header-mylocations {
 
 	&__block {
 		display: flex;

@@ -13,9 +13,9 @@ function Button({ setSearchValue, setIsSearch }) {
 
 	const { locations } = useSelector(state => state.users.currentUser);
 
-	const onClickSearch = () => {
-		dispatch(fetchFavorites(locations));
-	}
+	// const onClickSearch = () => {
+	// 	dispatch(fetchFavorites(locations));
+	// }
 
 	React.useEffect(() => {
 			const onClickOutsideSearch = (e) => {
@@ -35,7 +35,7 @@ function Button({ setSearchValue, setIsSearch }) {
 		}, [])
 
 	return (
-			<button className='btn' ref={btnRef} onClick={onClickSearch}>
+			<button className='btn' ref={btnRef}>
 				<img className='btn__icon' src={search} alt='Search icon' />
 				Search
 			</button>

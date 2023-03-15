@@ -11,6 +11,7 @@ import { fetchFound } from 'redux/slices/foundSlice';
 function Logo() {
 	const dispatch = useDispatch();
 
+	//===показать прогноз по текущим координатам============================================================================================
 	const onClickLogo = () => {
 		dispatch(fetchFound({}))
 	}
