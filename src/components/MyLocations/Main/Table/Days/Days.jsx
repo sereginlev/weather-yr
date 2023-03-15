@@ -8,6 +8,7 @@ function Days({ item }) {
 	return (
 		<div className='table__header header-list'>
 			{
+				item &&
 				item.map((el, index) => (
 					<p className='header-list__text' key={index}>
 						{days[new Date(el.date).getDay()]}

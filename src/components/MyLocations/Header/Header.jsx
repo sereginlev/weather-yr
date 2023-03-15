@@ -9,6 +9,7 @@ import User from './User/User';
 
 function Header() {
 	const { email } = useSelector(state => state.users.currentUser);
+
 	return (
 		<div className='header'>
 			<div className='_container'>
@@ -20,8 +21,11 @@ function Header() {
 							<p className='header__text'>Served by the Norwegian Meteorological Institute and NRK</p>
 					}
 					<Logo />
-					<Search />
-					<User />
+
+					<div className='header__block-user'>
+						<Search />
+						<User />
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import './List.scss';
 
@@ -8,6 +9,7 @@ import { fetchSearch } from 'redux/slices/searchSlice';
 
 function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby }) {
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	const listRef = React.useRef(); // ссылка на список найденных городов
 
 	const { searchItems } = useSelector(state => state.search); // массив из searchSlice(список городов, которые ищет пользователь)
@@ -40,6 +42,7 @@ function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby }) {
 
 		setIsOpen(!isOpen);
 		setIsSearch(false);
+		navigate('/');
 	}
 
 	React.useEffect(() => {

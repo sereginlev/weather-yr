@@ -1,18 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import './Logo.scss';
 
 import logo from 'assets/icons/common icons/logo-blue.svg';
+import { fetchFound } from 'redux/slices/foundSlice';
 
 function Logo() {
-  return (
-	 <div className='logo'>
-		<Link to='/'>
-			<img className='logo__icon' src={logo} alt='Company Logo' width='50px'/>
-		</Link>
-	 </div>
-  )
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
+	const onClickLogo = () => {
+		dispatch(fetchFound({}))
+		navigate('/');
+	}
+
+	return (
+		<div className='logo' onClick={onClickLogo}>
+			<Link to='/'>
+				<img className='logo__icon' src={logo} alt='Company Logo' width='50px' />
+			</Link>
+		</div>
+	)
 }
 
 export default Logo;

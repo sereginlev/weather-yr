@@ -1,5 +1,11 @@
 @import 'scss/variables.scss';
 
+.table {
+	&__text {
+		font-size: 30px;
+	}
+}
+
 .values-table{
 	display: flex;
 	flex-direction: column;

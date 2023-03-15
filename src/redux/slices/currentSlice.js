@@ -33,8 +33,8 @@ export const currentSlice = createSlice({
 			state.currentItem = {};
 		},
 		[fetchCurrent.fulfilled]: (state, action) => {
-			state.currentItem = action.payload;
 			state.status = 'success';
+			state.currentItem = action.payload;
 		},
 		[fetchCurrent.rejected]: (state) => {
 			state.status = 'error';
