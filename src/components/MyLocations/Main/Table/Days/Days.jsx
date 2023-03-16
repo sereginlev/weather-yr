@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Days.scss';
 
-function Days({ item }) {
+function Days() {
 	const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 	const immediateDays = [];
 

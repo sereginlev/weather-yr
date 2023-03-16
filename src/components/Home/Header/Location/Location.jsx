@@ -17,7 +17,7 @@ function Location({ isNearby }) {
 	const { location: currentLocation } = useSelector(state => state.current.currentItem);
 	const { location: foundLocation } = useSelector(state => state.found.foundItem);
 	const { isAuth } = useSelector(state => state.users.currentUser);
-	// console.log(locations);
+
 	//===добавление города в избранные города (хранится в локал сторедж через userSlice). дальше будет использоваться для вывода погодных условий на другой странице===================
 	const addFavLocation = (location) => {
 		const coords = `${location.lat},${location.lon}`;
@@ -61,7 +61,9 @@ function Location({ isNearby }) {
 			document.removeEventListener('click', onClickOutsideFav);
 		};
 	}, [isOpen, addFavRef]);
-
+	// console.log(foundLocation && isNearby);
+	// console.log(foundLocation);
+	console.log(isNearby);
 	return isAuth ? (
 		<div className='location'>
 			{
@@ -81,7 +83,8 @@ function Location({ isNearby }) {
 								<p className='region'>{foundLocation.country}</p> :
 								<p className='region'>{foundLocation.region}, {foundLocation.country}</p>
 						}
-					</div> :
+					</div> 
+					:
 					currentLocation &&
 					<div className='location__block' ref={locationRef}>
 						<div className='city'>

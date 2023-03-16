@@ -15,9 +15,6 @@ function Table() {
 
 	const { favoriteItems } = useSelector(state => state.users.currentUser);
 
-	//===переменная, для отображения дней недели в заголовке таблицы========================================================================
-	const forecastday = favoriteItems && favoriteItems.map(item => item.forecast.forecastday);
-
 	//===перейти на страницу прогноза любимого города при клике на него=====================================================================
 	const onClickItem = (location, e) => {
 		const coords = `${location.lat},${location.lon}`;
@@ -28,14 +25,13 @@ function Table() {
 
 	return (
 		<div className='main-block__table table'>
-
 			{
-					favoriteItems &&
+				favoriteItems &&
 					favoriteItems.length === 0 ?
 					<p className='table__text'>You don't have favorite locations.</p>
 					:
 					<>
-						<Days item={forecastday} />
+						<Days />
 
 						<ul className='table__values values-table'>
 							{

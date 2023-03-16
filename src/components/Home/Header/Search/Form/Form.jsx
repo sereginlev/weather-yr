@@ -7,7 +7,7 @@ import './Form.scss';
 import search from 'assets/icons/common icons/color icons/search.svg';
 import erase from 'assets/icons/common icons/close.svg';
 
-function Form({ searchValue, setSearchValue, setIsSearch, setIsNearby }) {
+function Form({ searchValue, setSearchValue, setIsSearch, setIsNearby, isNearby }) {
 	const [isOpen, setIsOpen] = React.useState(true); // скрытие / отображение списка найденных городов
 	const inputRef = React.useRef(); // ссылка на инпут поиска нужного города
 	const btnRef = React.useRef(); // ссылка на кнопку Search
@@ -57,7 +57,7 @@ function Form({ searchValue, setSearchValue, setIsSearch, setIsNearby }) {
 
 			{
 				isOpen && 
-				<List isOpen={isOpen} setIsOpen={setIsOpen} searchValue={searchValue} setIsSearch={setIsSearch} setIsNearby={setIsNearby}/>
+				<List isOpen={isOpen} setIsOpen={setIsOpen} searchValue={searchValue} setIsSearch={setIsSearch} setIsNearby={setIsNearby} isNearby={isNearby}/>
 			}
 		</form>
 	)

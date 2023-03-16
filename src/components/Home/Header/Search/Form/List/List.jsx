@@ -5,13 +5,20 @@ import './List.scss';
 
 import { fetchFound } from 'redux/slices/foundSlice';
 import { fetchSearch } from 'redux/slices/searchSlice';
+import { fetchCurrent } from 'redux/slices/currentSlice';
 
-function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby }) {
+function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby, isNearby }) {
 	const dispatch = useDispatch();
 	const listRef = React.useRef(); // ссылка на список найденных городов
 
 	const { searchItems } = useSelector(state => state.search); // массив из searchSlice(список городов, которые ищет пользователь)
 	const { favoriteItems } = useSelector(state => state.users.currentUser); // массив из данных о погоде любимых городов
+
+	//===показать прогноз по текущим координатам===========================================================================================
+	const onClickNearby = () => {
+		dispatch(fetchFound({}));
+		setIsNearby(false);
+	}
 
 	//===при клике на список с избранными городами выводит его в Location==================================================================
 	const onClickFavorite = (e) => {
@@ -22,7 +29,7 @@ function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby }) {
 		})
 	}
 
-	//===при клике на элемент списка, обновляются стейты города и страны, который ищет пользователь и закрывается окно списка. стейты нужны для следующего запроса с погодными условиями для выбранного города========================================================================
+	//===при клике на элемент списка, обновляются стейты города и страны, который ищет пользователь и закрывается окно списка. стейты нужны для следующего запроса с погодными условиями для выбранного города======================================================================
 	const onClickFoundItem = (e) => {
 		let name = [];
 
@@ -34,12 +41,24 @@ function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby }) {
 			}
 		}
 
+		//===при клике на Nearby показывается прогноз по координатам пользователя============================================================= 
 		if (e.target.innerHTML === 'Nearby') {
 			setIsNearby(true);
-		}
+			navigator.geolocation.getCurrentPosition((pos) => {
+				let lat = Number(pos.coords.latitude.toFixed(2));
+				let lon = Number(pos.coords.longitude.toFixed(2));
 
-		setIsOpen(!isOpen);
-		setIsSearch(false);
+				const location = `q=${lat},${lon}`
+
+				dispatch(fetchFound(location));
+			});
+			setIsOpen(!isOpen);
+			setIsSearch(false);
+		} else {
+			setIsOpen(!isOpen);
+			setIsSearch(false);
+			setIsNearby(false);
+		}
 	}
 
 	React.useEffect(() => {
@@ -53,11 +72,11 @@ function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby }) {
 		<ul className='search__list' ref={listRef} onClick={onClickFoundItem}>
 			{
 				searchValue.length > 0 || favoriteItems.length > 0 ?
-					<li className='nearby' >
+					<li className='nearby'>
 						Nearby
 					</li>
 					:
-					<li className='_nearby' >
+					<li className='_nearby'>
 						Nearby
 					</li>
 			}

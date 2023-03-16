@@ -6,7 +6,7 @@ import './Button.scss';
 import close from 'assets/icons/common icons/close.svg';
 import remove from 'assets/icons/common icons/color icons/remove.svg';
 
-import { removeLocation, fetchFavorites } from 'redux/slices/userSlice';
+import { removeLocation } from 'redux/slices/userSlice';
 
 function Button({ location }) {
 	const dispatch = useDispatch();
