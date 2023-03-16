@@ -14,14 +14,11 @@ function Button({ location }) {
 	const popupRef = React.useRef();
 	const buttonRef = React.useRef();
 
-	const { locations } = useSelector(state => state.users.currentUser);
-
 	//===удаление города из избранных (из локал стореджа и userSlice тоже)===========================================================
 	const removeFavLocation = (location) => {
 		const coords = `${location.lat},${location.lon}`;
 
 		dispatch(removeLocation(coords));
-		console.log(dispatch(removeLocation(coords)));
 
 		setIsOpen(false);
 	}

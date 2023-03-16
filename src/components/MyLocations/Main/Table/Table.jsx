@@ -31,7 +31,7 @@ function Table() {
 
 			{
 					favoriteItems &&
-					favoriteItems.length === 0 && forecastday.length === 0 ?
+					favoriteItems.length === 0 ?
 					<p className='table__text'>You don't have favorite locations.</p>
 					:
 					<>
