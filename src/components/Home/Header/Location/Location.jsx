@@ -17,7 +17,7 @@ function Location({ isNearby }) {
 	const { location: currentLocation } = useSelector(state => state.current.currentItem);
 	const { location: foundLocation } = useSelector(state => state.found.foundItem);
 	const { isAuth } = useSelector(state => state.users.currentUser);
-	console.log(locations);
+	// console.log(locations);
 	//===добавление города в избранные города (хранится в локал сторедж через userSlice). дальше будет использоваться для вывода погодных условий на другой странице===================
 	const addFavLocation = (location) => {
 		const coords = `${location.lat},${location.lon}`;
@@ -26,11 +26,15 @@ function Location({ isNearby }) {
 			return
 		} else {
 			dispatch(setLocation(`${location.lat},${location.lon}`));
-			dispatch(fetchFavorites(locations));
 		};
 
 		setIsOpen(false);
 	};
+	
+	//===следит за изменением locations, чтобы добавить город в любимые(в favoriteItems)==================================================
+	React.useEffect(() => {
+		dispatch(fetchFavorites(locations));
+	}, [locations]);
 
 	//===удаление города из избранных (из локал стореджа и userSlice тоже)===========================================================
 	const removeFavLocation = (location) => {
@@ -175,7 +179,7 @@ function Location({ isNearby }) {
 						}
 					</div>
 			}
-		</div>	
+		</div>
 	)
 }
 

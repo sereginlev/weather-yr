@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchFavorites = createAsyncThunk(
 	'user/fetchFavorites',
 	async function (locations) {
+
 		const items = [];
 		for (let i = 0; i < locations.length; i++) {
 			await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${locations[i]}&days=3`)
@@ -13,7 +14,8 @@ export const fetchFavorites = createAsyncThunk(
 				console.log('Error:', e)
 			})
 		}
-		return items;
+
+		return items.filter((el, index) => items.indexOf(el) === index);
 	}
 )
 
@@ -44,7 +46,7 @@ export const userSlice = createSlice({
 			state.users.map(item => item.id === state.currentUser.id ? item.locations = item.locations.filter(el => el !== action.payload) : null);
 			state.users.map(item => item.id === state.currentUser.id ? item.favoriteItems = item.favoriteItems.filter(el => el !== action.payload) : null);
 			state.currentUser.locations = state.currentUser.locations.filter(item => item !== action.payload);
-			state.currentUser.favoriteItems = state.currentUser.favoriteItems.filter(item => item !== action.payload);
+			state.currentUser.favoriteItems = state.currentUser.favoriteItems.filter(item => `${item.location.lat},${item.location.lon}` !== action.payload);
 		}
 	},
 	extraReducers: {

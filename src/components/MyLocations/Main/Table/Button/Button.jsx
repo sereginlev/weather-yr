@@ -6,7 +6,7 @@ import './Button.scss';
 import close from 'assets/icons/common icons/close.svg';
 import remove from 'assets/icons/common icons/color icons/remove.svg';
 
-import { removeLocation } from 'redux/slices/userSlice';
+import { removeLocation, fetchFavorites } from 'redux/slices/userSlice';
 
 function Button({ location }) {
 	const dispatch = useDispatch();
@@ -14,11 +14,15 @@ function Button({ location }) {
 	const popupRef = React.useRef();
 	const buttonRef = React.useRef();
 
+	const { locations } = useSelector(state => state.users.currentUser);
+
 	//===удаление города из избранных (из локал стореджа и userSlice тоже)===========================================================
 	const removeFavLocation = (location) => {
 		const coords = `${location.lat},${location.lon}`;
 
 		dispatch(removeLocation(coords));
+		console.log(dispatch(removeLocation(coords)));
+
 		setIsOpen(false);
 	}
 	
