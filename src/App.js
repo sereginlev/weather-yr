@@ -28,12 +28,12 @@ function App() {
 
 	return (
 		<Routes>
-			<Route exact path='/' element={<Home />} />
-			<Route exact path='/auth' element={<Authentification />} />
-			<Route exact path='/signup' element={<SignUp />} />
-			<Route exact path='/confirm' element={<Confirm />} />
-			<Route exact path='/resetpassword' element={<ResetPassword />} />
-			<Route exact path='/mylocations' element={<MyLocations />} />
+			<Route exact path='https://witchcult-today.github.io/weather-yr/' element={<Home />} />
+			<Route exact path='https://witchcult-today.github.io/weather-yr/auth' element={<Authentification />} />
+			<Route exact path='https://witchcult-today.github.io/weather-yr/signup' element={<SignUp />} />
+			<Route exact path='https://witchcult-today.github.io/weather-yr/confirm' element={<Confirm />} />
+			<Route exact path='https://witchcult-today.github.io/weather-yr/resetpassword' element={<ResetPassword />} />
+			<Route exact path='https://witchcult-today.github.io/weather-yr/mylocations' element={<MyLocations />} />
 		</Routes>
 	);
 }
