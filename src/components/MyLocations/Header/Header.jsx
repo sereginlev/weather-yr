@@ -14,12 +14,9 @@ function Header() {
 		<div className='header-mylocations'>
 			<div className='_container'>
 				<div className='header__block'>
-					{
-						email ?
-							<p className='header__text'>{email}</p>
-							:
-							<p className='header__text'>Served by the Norwegian Meteorological Institute and NRK</p>
-					}
+
+					<p className='header__text'>{email}</p>
+
 					<Logo />
 
 					<div className='header__block-user'>

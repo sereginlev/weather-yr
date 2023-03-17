@@ -1,11 +1,14 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import './Invalid.scss';
 
 function Invalid() {
-  return (
-	 <p className='invalid'>Invalid email or password! Please, try again.</p>
-  )
+	const { t } = useTranslation();
+
+	return (
+		<p className='invalid'>{ t("invalidEmailOrPassword") }</p>
+	)
 }
 
 export default Invalid;

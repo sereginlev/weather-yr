@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import './Table.scss';
 
@@ -10,6 +11,7 @@ import Days from './Days/Days';
 import { fetchFound } from 'redux/slices/foundSlice';
 
 function Table() {
+	const { t } = useTranslation();
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -28,7 +30,7 @@ function Table() {
 			{
 				favoriteItems &&
 					favoriteItems.length === 0 ?
-					<p className='table__text'>You don't have favorite locations.</p>
+					<p className='table__text'>{ t("emptyLocations")}</p>
 					:
 					<>
 						<Days />

@@ -1,24 +1,19 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import './List.scss';
 
 import { fetchFound } from 'redux/slices/foundSlice';
 import { fetchSearch } from 'redux/slices/searchSlice';
-import { fetchCurrent } from 'redux/slices/currentSlice';
 
 function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby, isNearby }) {
+	const { t } = useTranslation();
 	const dispatch = useDispatch();
 	const listRef = React.useRef(); // ссылка на список найденных городов
 
 	const { searchItems } = useSelector(state => state.search); // массив из searchSlice(список городов, которые ищет пользователь)
 	const { favoriteItems } = useSelector(state => state.users.currentUser); // массив из данных о погоде любимых городов
-
-	//===показать прогноз по текущим координатам===========================================================================================
-	const onClickNearby = () => {
-		dispatch(fetchFound({}));
-		setIsNearby(false);
-	}
 
 	//===при клике на список с избранными городами выводит его в Location==================================================================
 	const onClickFavorite = (e) => {
@@ -73,14 +68,13 @@ function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby, isNear
 			{
 				searchValue.length > 0 || favoriteItems.length > 0 ?
 					<li className='nearby'>
-						Nearby
+						{ t("nearby") }
 					</li>
 					:
 					<li className='_nearby'>
-						Nearby
+						{ t("nearby") }
 					</li>
 			}
-
 
 			{
 				searchItems && isOpen && searchValue.length > 0 ?

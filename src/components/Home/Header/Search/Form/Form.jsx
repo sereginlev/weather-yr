@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import List from './List/List';
 
@@ -8,6 +9,7 @@ import search from 'assets/icons/common icons/color icons/search.svg';
 import erase from 'assets/icons/common icons/close.svg';
 
 function Form({ searchValue, setSearchValue, setIsSearch, setIsNearby, isNearby }) {
+	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = React.useState(true); // скрытие / отображение списка найденных городов
 	const inputRef = React.useRef(); // ссылка на инпут поиска нужного города
 	const btnRef = React.useRef(); // ссылка на кнопку Search
@@ -48,7 +50,7 @@ function Form({ searchValue, setSearchValue, setIsSearch, setIsNearby, isNearby 
 		<form className='search' ref={formRef}>
 
 			<img className='search__icon' src={search} alt='Search icon' />
-			<input className='search__input' ref={inputRef} autoFocus type='text' value={searchValue} placeholder='Search by location or coordinates' onChange={onClickInput} />
+			<input className='search__input' ref={inputRef} autoFocus type='text' value={searchValue} placeholder={ t("searchPlaceholder") } onChange={onClickInput} />
 
 			{
 				searchValue &&

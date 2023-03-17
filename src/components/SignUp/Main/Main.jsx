@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import Form from 'components/SignUp/Main/Form/Form';
 import Invalid from './Form/Invalid/Invalid';
@@ -10,6 +11,7 @@ import Invalid from './Form/Invalid/Invalid';
 import { setUser } from 'redux/slices/userSlice.js';
 
 function Main() {
+	const { t } = useTranslation();
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -57,7 +59,7 @@ function Main() {
 	return (
 		<div className='main-auth'>
 			<div className='main-auth__block'>
-				<h1 className='block__title'>Create an account</h1>
+				<h1 className='block__title'>{ t("authCreateAccount")}</h1>
 
 				<Form handleClick={handleSignUp} password={password} setPassword={setPassword} confirm={confirm} setConfirm={setConfirm} />
 
@@ -66,7 +68,7 @@ function Main() {
 					<Invalid error={error} />
 				}
 
-				<Link className='block__link' to='/auth'>Already have an account?</Link>
+				<Link className='block__link' to='/auth'>{ t("authAlreadyHaveAnAccount")}</Link>
 
 			</div>
 		</div>

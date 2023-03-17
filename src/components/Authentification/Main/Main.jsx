@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import './Main.scss';
 
@@ -13,6 +14,7 @@ import Invalid from './Form/Invalid/Invalid';
 import { setCurrentUser } from 'redux/slices/userSlice.js';
 
 function Login() {
+	const { t } = useTranslation();
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -39,7 +41,7 @@ function Login() {
 	return (
 		<div className='main-auth'>
 			<div className='main-auth__block'>
-				<h1 className='block__title'>Log in or create an account</h1>
+				<h1 className='block__title'>{ t("authHeader") }</h1>
 
 				<Form handleClick={handleSignIn} isSignUp={isSignUp}/>
 				{
@@ -50,7 +52,7 @@ function Login() {
 
 				<Socials />
 
-				<Link className='block__link' to='/signup' onClick={() => setIsSignUp(!isSignUp)}>Don't have an account? Sign up</Link>
+				<Link className='block__link' to='/signup' onClick={() => setIsSignUp(!isSignUp)}>{ t("authSignUp") }</Link>
 			</div>
 		</div>
 	)

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import './Current.scss';
 
@@ -9,12 +10,13 @@ import wind from 'assets/icons/common icons/wind.svg';
 import windDirection from 'assets/icons/common icons/wind-direction.svg';
 
 function Current({ current }) {
+	const { t } = useTranslation();
 
 	return (
 		<div className='current'>
 			<div className='current__hero'>
 				<img className='hero__icon' src={recent} alt='Current conditions' />
-				<h3 className='hero__title'>Current conditions</h3>
+				<h3 className='hero__title'>{ t("current") }</h3>
 			</div>
 
 			{
@@ -25,7 +27,7 @@ function Current({ current }) {
 					<div className='block__temp'>
 						<img className='temp__icon' src={temp} alt='Temperature icon' />
 						<span className='temp__real'>{Math.round(current.temp_c)}°</span>
-						<p className='temp__text'>Feels like <span className='temp__feels'>{Math.round(current.feelslike_c)}°</span></p>
+						<p className='temp__text'>{ t("feelsLike") } <span className='temp__feels'>{Math.round(current.feelslike_c)}°</span></p>
 					</div>
 
 					<div className='block__precip'>

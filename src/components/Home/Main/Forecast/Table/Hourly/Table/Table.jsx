@@ -1,22 +1,24 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import './Table.scss';
 
 import windDirection from 'assets/icons/common icons/wind-direction.svg';
 
 function Table({ item, date }) {
+	const { t } = useTranslation();
 	const currentHour = new Date().getHours();
 	const currentDate = new Date().getDate();
 
 	return (
 		<div className='hourly__table hourly-table'>
 			<div className='hourly-table__header'>
-				<p className='time'>Time</p>
-				<p className='weather'>Weather</p>
-				<p className='temp'>Temperature, °</p>
-				<p className='precip'>Precipitation, mm</p>
-				<p className='wind'>Wind speed, m/s</p>
-				<p className='condition'>Condition</p>
+				<p className='time'>{ t("timeHourly") }</p>
+				<p className='weather'>{ t("weatherHourly") }</p>
+				<p className='temp'>{ t("tempHourly") }</p>
+				<p className='precip'>{ t("precipHourly") }</p>
+				<p className='wind'>{ t("windHourly") }</p>
+				<p className='condition'>{ t("conditionHourly") }</p>
 			</div>
 
 			<ul className='hourly-table__values'>

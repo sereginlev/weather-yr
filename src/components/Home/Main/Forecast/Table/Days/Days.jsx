@@ -1,16 +1,19 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import './Days.scss';
 
 function Days({ item }) {
-	const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-	const month = ['January', 'February', 'March', 'April', 'May', 'June', 'Jule', 'August', 'September', 'October', 'November', 'December'];
+	const { t } = useTranslation();
+
+	const days = [t("sunday"), t("monday"), t("tuesday"), t("wednesday"), t("thursday"), t("friday"), t("saturday")];
+	const month = [t("january"), t("february"), t("march"), t("april"), t("may"), t("june"), t("jule"), t("august"), t("september"), t("october"), t("november"), t("december")];
 	const today = days[new Date().getDay()]; // получение сегодняшнего дня недели, чтобы вывести Today
 
 	return (
 		<div className='item__date date'>
 			<p className='date__text'>
-				{today === days[new Date(item.date).getDay()] ? 'Today' : days[new Date(item.date).getDay()]} {new Date(item.date).getDate()} {month[new Date(item.date).getMonth()]}
+				{today === days[new Date(item.date).getDay()] ? t("today") : days[new Date(item.date).getDay()]}, {new Date(item.date).getDate()} {month[new Date(item.date).getMonth()]}
 			</p>
 		</div>
 	)

@@ -1,5 +1,6 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import './Button.scss';
 
@@ -9,6 +10,7 @@ import remove from 'assets/icons/common icons/color icons/remove.svg';
 import { removeLocation } from 'redux/slices/userSlice';
 
 function Button({ location }) {
+	const { t } = useTranslation();
 	const dispatch = useDispatch();
 	const [isOpen, setIsOpen] = React.useState(false);
 	const popupRef = React.useRef();
@@ -56,11 +58,11 @@ function Button({ location }) {
 				<div className='item__button-popup' ref={popupRef}>
 					<div className='remove' onClick={() => removeFavLocation(location)}>
 						<img className='remove__icon' src={remove} alt='Remove from my locations' />
-						<p className='remove__text'>Remove from "My Locations"</p>
+						<p className='remove__text'>{ t("removeFromMyLocations") }</p>
 					</div>
 					<div className='close' onClick={() => setIsOpen(false)}>
 						<img className='close__icon' src={close} alt='Close popup' />
-						<p className='close__text'>Close</p>
+						<p className='close__text'>{ t("close") }</p>
 					</div>
 				</div>
 			}
