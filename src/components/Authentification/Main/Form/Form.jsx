@@ -7,6 +7,8 @@ import './Form.scss';
 import view from 'assets/icons/common icons/view-password.svg';
 import disableView from 'assets/icons/common icons/disable-view-password.svg';
 
+import Button from './Button/Button';
+
 function Form({ handleClick }) {
 	const { t } = useTranslation();
 	const [email, setEmail] = React.useState(''); // состояние инпута для почты
@@ -35,7 +37,7 @@ function Form({ handleClick }) {
 
 			<Link to='/resetpassword' className='form__link' type='button'>{ t("authForgotPassword") }</Link>
 
-			<button className='form__btn' type='button' onClick={() => handleClick(email, password)}>{ t("authContinue") }</button>
+			<Button handleClick={handleClick} email={email} password={password} />
 		</form>
 	)
 }

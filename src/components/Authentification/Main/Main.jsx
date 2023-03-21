@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import './Main.scss';
+import styles from 'scss/modules/Authentification/Main.module.scss';
 
 import Form from './Form/Form';
 import Socials from './Socials/Socials';
@@ -39,20 +39,20 @@ function Login() {
 	}
 
 	return (
-		<div className='main-auth'>
-			<div className='main-auth__block'>
-				<h1 className='block__title'>{ t("authHeader") }</h1>
+		<div className={styles.root}>
+			<div className={styles.block}>
+				<h1 className={styles.title}>{ t("authHeader") }</h1>
 
 				<Form handleClick={handleSignIn} isSignUp={isSignUp}/>
 				{
 					isInvalid &&
 					<Invalid />
 				}
-				<span>or</span>
+				<span className={styles.or}>or</span>
 
 				<Socials />
 
-				<Link className='block__link' to='/signup' onClick={() => setIsSignUp(!isSignUp)}>{ t("authSignUp") }</Link>
+				<Link className={styles.link} to='/signup' onClick={() => setIsSignUp(!isSignUp)}>{ t("authSignUp") }</Link>
 			</div>
 		</div>
 	)

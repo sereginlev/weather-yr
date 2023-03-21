@@ -5,6 +5,8 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+import styles from 'scss/modules/Authentification/Main.module.scss';
+
 import Form from 'components/SignUp/Main/Form/Form';
 import Invalid from './Form/Invalid/Invalid';
 
@@ -57,9 +59,9 @@ function Main() {
 	}
 
 	return (
-		<div className='main-auth'>
-			<div className='main-auth__block'>
-				<h1 className='block__title'>{ t("authCreateAccount")}</h1>
+		<div className={styles.root}>
+			<div className={styles.block}>
+				<h1 className={styles.title}>{ t("authCreateAccount") }</h1>
 
 				<Form handleClick={handleSignUp} password={password} setPassword={setPassword} confirm={confirm} setConfirm={setConfirm} />
 
@@ -68,7 +70,7 @@ function Main() {
 					<Invalid error={error} />
 				}
 
-				<Link className='block__link' to='/auth'>{ t("authAlreadyHaveAnAccount")}</Link>
+				<Link className={styles.link} to='/auth'>{ t("authAlreadyHaveAnAccount") }</Link>
 
 			</div>
 		</div>

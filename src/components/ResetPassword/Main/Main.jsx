@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { useTranslation } from 'react-i18next';
 
-import './Main.scss';
+import styles from 'scss/modules/Authentification/Main.module.scss';
 
 import Invalid from '../Invalid/Invalid';
 
 function Main() {
 	const { t } = useTranslation();
+
 	const [email, setEmail] = React.useState('');// состояние инпута для ввода почты
 	const [isSended, setIsSended] = React.useState(false); // показать, что письмо с паролем отправлено
 	const [isInvalid, setIsInvalid] = React.useState(false); // показать ошибку при неверно введенной почте
@@ -17,7 +18,10 @@ function Main() {
 	const handleResetPassword = (email) => {
 		const auth = getAuth();
 		sendPasswordResetEmail(auth, email)
-			.then(() => setIsSended(!isSended))
+			.then(() => {
+				setIsSended(!isSended);
+				setIsInvalid(false);
+			})
 			.catch((error) => {
 				setIsInvalid(true);
 				console.log(error.code);
@@ -26,20 +30,20 @@ function Main() {
 	}
 
 	return (
-		<div className='main-auth'>
+		<div className={styles.root}>
 			{
 				isSended ?
 					<>
-						<p className='main-auth__text'>{ t("authForgotPasswordConfirm") }</p>
+						<p className={styles.text}>{ t("authForgotPasswordConfirm") }</p>
 						<Link to='/auth' className='main-auth__btn' type='button'>{ t("authContinue") }</Link>
 					</>
 					:
 					<>
-						<p className='main-auth__text'>{ t("authForgotPasswordText") }</p>
+						<p className={styles.text}>{ t("authForgotPasswordText") }</p>
 
-						<input className='main-auth__input' type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+						<input className={styles.input} type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
 
-						<button className='main-auth__btn' type='button' onClick={() => handleResetPassword(email)}>{ t("authContinue") }</button>
+						<button className={styles.btn} type='button' onClick={() => handleResetPassword(email)}>{ t("authContinue") }</button>
 					</>
 			}
 
