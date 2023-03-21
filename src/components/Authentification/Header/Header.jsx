@@ -4,17 +4,20 @@ import { useTranslation } from 'react-i18next';
 
 import './Header.scss';
 
+import styles from 'scss/modules/Authentification/Header.module.scss';
+
 import logo from 'assets/icons/common icons/logo-blue.svg';
 
 function Header() {
 	const { t } = useTranslation();
 
 	return (
-		<div className='header-auth'>
-			<Link to='/'>
-				<img className='logo-auth' src={logo} alt='Company logo' />
+		<div className={styles.root}>
+			<Link to='/' className={styles.logo}>
+				<img  src={logo} alt='Company logo' />
 			</Link>
-			<p className='header-auth__text'>{ t("servedHeader") }</p>
+
+			<p className={styles.text}>{ t("servedHeader") }</p>
 		</div>
 	)
 }
