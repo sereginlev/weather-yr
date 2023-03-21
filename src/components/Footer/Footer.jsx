@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import './Footer.scss';
+import styles from 'scss/modules/Footer/Footer.module.scss';
 
 import Served from './Served/Served';
 import Button from './Button/Button';
@@ -10,12 +10,12 @@ function Footer() {
 	const { t } = useTranslation();
 
 	return (
-		<div className='footer'>
-			<div className='_container'>
-				<div className='footer__block'>
+		<div className={styles.root}>
+			<div className={styles.container}>
+				<div className={styles.block}>
 					<Served />
 
-					<p>{ t("copyright") }</p>
+					<p className={styles.text}>{ t("copyright") }</p>
 
 					<Button />
 				</div>

@@ -1,0 +1,24 @@
+@import 'scss/variables.scss';
+
+.root {
+	padding: 20px 0;
+	border-top: 0.0625em solid rgb(204, 204, 204);
+	background-color: #fff;
+}
+
+.container {
+	margin: 0 auto;
+	width: $container-width;
+	box-shadow: none;
+}
+
+.block {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+}
+
+.text {
+	display: block;
+}
