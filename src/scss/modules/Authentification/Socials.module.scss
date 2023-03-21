@@ -1,6 +1,10 @@
 @import 'scss/variables.scss';
 
-.socials__link {
+.root {
+	display: block;
+}
+
+.link {
 	padding: 16px;
 	display: block;
 	line-height: 24px;
