@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import './Header.scss';
-
 import styles from 'scss/modules/Authentification/Header.module.scss';
 
 import logo from 'assets/icons/common icons/logo-blue.svg';

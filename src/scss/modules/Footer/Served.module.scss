@@ -1,0 +1,16 @@
+.root {
+	display: block;
+}
+
+.text {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.list {
+	display: flex;
+}
+
+.link:not(:last-child) {
+	margin-right: 20px;
+}
