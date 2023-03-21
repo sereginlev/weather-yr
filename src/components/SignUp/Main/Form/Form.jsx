@@ -8,13 +8,14 @@ import disableView from 'assets/icons/common icons/disable-view-password.svg';
 
 function Form({ handleClick, password, setPassword, confirm, setConfirm }) {
 	const { t } = useTranslation();
+	
 	const [isView, setIsView] = React.useState(false); // скрыть / показать введенные пароль
 	const [isViewConfirm, setIsViewConfirm] = React.useState(false); // скрыть / показать подтверждение пароля
 	const [email, setEmail] = React.useState(''); // состояние инпута для почты
 
 	return (
 		<form className={styles.root}>
-			<label className={styles.label} htmlFor='email'>{ t("authEmail") }</label>
+			<label className={styles.label} htmlFor='email'>{t("authEmail")}</label>
 			<input className={styles.input} type='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
 
 			{
@@ -47,7 +48,7 @@ function Form({ handleClick, password, setPassword, confirm, setConfirm }) {
 					</div>
 			}
 
-			<button className={styles.btn} type='button' onClick={() => handleClick(email, password)}>{ t("authContinue") }</button>
+			<button className={styles.btn} type='button' onClick={() => handleClick(email, password)}>{t("authContinue")}</button>
 		</form>
 	)
 }
