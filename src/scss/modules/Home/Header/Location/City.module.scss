@@ -1,0 +1,19 @@
+.city {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	margin-bottom: 5px;
+	width: 350px;
+}
+
+.name {
+	font-size: 28px;
+	font-weight: 600;
+	line-height: 1.6rem;
+	margin-right: 5px;
+}
+
+.region {
+	font-size: 16px;
+	cursor: pointer;
+}

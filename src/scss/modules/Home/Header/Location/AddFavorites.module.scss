@@ -1,0 +1,61 @@
+@import 'scss/_variables.scss';
+
+.action {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	cursor: pointer;
+	background-color: $white;
+	padding: 15px;
+	border-radius: 10px 10px 0 0;
+
+	&:hover {
+		background-color: $blue;
+
+		.actionText {
+			color: $white;
+		}
+
+		.add {
+			path {
+				stroke: #fff;
+			}
+		}
+
+		.remove {
+			path {
+				stroke: #fff;
+			}
+		}
+	}
+}
+
+.actionText {
+	font-size: 22px;
+	margin-left: 5px;
+}
+
+.divider {
+	border-bottom: 1px solid $lightGrey;
+	width: 100%;
+}
+
+.info {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 15px;
+}
+
+.infoText {
+	font-size: 16px;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+
+.coords {
+	font-size: 16px;
+	font-style: italic;
+}

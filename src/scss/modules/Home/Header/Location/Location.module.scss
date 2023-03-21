@@ -1,0 +1,21 @@
+@import 'scss/_variables.scss';
+
+.root {
+	display: flex;
+	flex: 1 1 auto;
+	position: relative;
+}
+
+.addFav {
+	width: 350px;
+	background-color: $white;
+	border-radius: 10px;
+	box-shadow: 2px 2px rgb(33 41 43 / 10%);
+	position: absolute;
+	top: 60px;
+}
+
+.block {
+	display: block;
+}
+
