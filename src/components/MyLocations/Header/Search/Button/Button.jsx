@@ -2,6 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
+import styles from 'scss/modules/Footer/Button.module.scss';
+
 import search from 'assets/icons/common icons/color icons/search.svg';
 
 import { fetchFavorites } from 'redux/slices/userSlice';
@@ -37,8 +39,8 @@ function Button({ setSearchValue, setIsSearch }) {
 		}, [])
 
 	return (
-			<button className='btn' ref={btnRef} onClick={onClickSearch}>
-				<img className='btn__icon' src={search} alt='Search icon' />
+			<button className={styles.btn} ref={btnRef} onClick={onClickSearch}>
+				<img className={styles.icon} src={search} alt='Search icon' />
 				{ t("search") }
 			</button>
 		)

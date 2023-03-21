@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+import styles from 'scss/modules/Home/Button.module.scss';
+
 import myLocations from 'assets/icons/common icons/color icons/map.svg'
 
 function MyLocations() {
@@ -13,8 +15,8 @@ function MyLocations() {
 		<>
 			{
 				isAuth ?
-					<Link to='/mylocations' className='btn' type='button'>
-						<img className='btn__icon' src={myLocations} alt='My Locations icon' />
+					<Link to='/mylocations' className={styles.btn} type='button'>
+						<img className={styles.icon} src={myLocations} alt='My Locations icon' />
 						{ t("mylocations") }
 					</Link>
 					:

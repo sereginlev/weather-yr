@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
+import styles from 'scss/modules/Home/Button.module.scss';
+
 import login from 'assets/icons/common icons/color icons/login.svg';
 
 import { removeUser } from 'redux/slices/userSlice';
@@ -18,13 +20,13 @@ function User() {
 		<>
 			{
 				!isAuth ?
-					<Link to='/auth' className='btn' type='button' onClick={() => setIsOpen(!isOpen)}>
-						<img className='btn__icon' src={login} alt='Login icon' />
+					<Link to='/auth' className={styles.btn} type='button' onClick={() => setIsOpen(!isOpen)}>
+						<img className={styles.icon} src={login} alt='Login icon' />
 						{ t("login") }
 					</Link>
 					:
-					<button className='btn' type='button' onClick={() => dispatch(removeUser())}>
-						<img className='btn__icon' src={login} alt='Login icon' />
+					<button className={styles.btn} type='button' onClick={() => dispatch(removeUser())}>
+						<img className={styles.icon} src={login} alt='Login icon' />
 						{ t("logout") }
 					</button>
 			}
