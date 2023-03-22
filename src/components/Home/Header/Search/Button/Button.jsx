@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import styles from 'scss/modules/Home/Button.module.scss';
+import styles from 'scss/modules/ui/Button.module.scss';
 
 import search from 'assets/icons/common icons/color icons/search.svg';
 

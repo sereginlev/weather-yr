@@ -7,10 +7,10 @@ import Footer from 'components/Footer/Footer';
 function MyLocations() {
 
 	React.useEffect(() => {
-		document.body.classList.add('my-locations');
+		document.body.classList.add('home');
 
 		return () => {
-			document.body.classList.remove('my-locations');
+			document.body.classList.remove('home');
 		};
 	});
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import styles from 'scss/modules/Home/Button.module.scss';
+import styles from 'scss/modules/ui/Button.module.scss';
 
 import login from 'assets/icons/common icons/color icons/login.svg';
 
