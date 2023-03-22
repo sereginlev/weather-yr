@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import './Buttons.scss';
+import styles from 'scss/modules/Home/Main/Table/Hourly/Button.module.scss';
 
 import arrowLeft from 'assets/icons/common icons/color icons/arrow-left.svg';
 import arrowRight from 'assets/icons/common icons/color icons/arrow-right.svg';
@@ -36,19 +36,19 @@ function Buttons({ item, forecast, index, setIndex }) {
 	}, [isNext, isPrevious, index]);
 
 	return (
-		<div className='hourly-table__buttons'>
+		<div className={styles.root}>
 			{
 				isPrevious &&
-				<button className='btn prev' type='button' onClick={onClickPrevious}>
-					<img className='btn__icon' src={arrowLeft} alt='Arrow left' />
+				<button className={styles.prev} type='button' onClick={onClickPrevious}>
+					<img className={styles.icon} src={arrowLeft} alt='Arrow left' />
 					{ t("previousDay") }
 				</button>
 			}
 			{
 				isNext &&
-				<button className='btn next' type='button' onClick={onClickNext}>
+				<button className={styles.next} type='button' onClick={onClickNext}>
 					{ t("nextDay") }
-					<img className='btn__icon' src={arrowRight} alt='Arrow right' />
+					<img className={styles.icon} src={arrowRight} alt='Arrow right' />
 				</button>
 			}
 		</div>

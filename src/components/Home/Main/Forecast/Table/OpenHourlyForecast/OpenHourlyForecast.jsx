@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import './OpenHourlyForecast.scss';
+import styles from 'scss/modules/Home/Main/Table/OpenHourlyForecast.module.scss';
 
 import arrowRight from 'assets/icons/common icons/arrow-right.svg';
 
@@ -9,9 +9,11 @@ function Hourly() {
 	const { t } = useTranslation();
 
 	return (
-		<div className='item__open open'>
-			<p className='open__text'>{ t("openHourlyForecast") }</p>
-			<img className='open__icon' src={arrowRight} alt='Open hourly forecast' />
+		<div className={styles.root}>
+			<p className={styles.text}>
+				{ t("openHourlyForecast") }
+			</p>
+			<img className={styles.icon} src={arrowRight} alt='Open hourly forecast' />
 		</div>
 	)
 }

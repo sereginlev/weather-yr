@@ -1,26 +1,28 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-import './Values.scss';
+import styles from 'scss/modules/Home/Main/Table/Values.module.scss';
 
 function Values({ item }) {
+	const { t } = useTranslation();
 
 	return (
-		<div className='item__values values'>
-			<p className='values__temp temp'>
-				<span className='temp__text'>{Math.round(item.day.maxtemp_c)}°</span> / <span className='temp__text'>{Math.round(item.day.mintemp_c)}°</span>
+		<div className={styles.root}>
+			<p className={styles.temp}>
+				<span className={styles.text}>{Math.round(item.day.maxtemp_c)}°</span> / <span className={styles.text}>{Math.round(item.day.mintemp_c)}°</span>
 			</p>
 
 			{
 				Math.round(item.day.totalprecip_mm) === 0 ?
 					<></>
 					:
-					<div className='values__precip precip'>
-						<span className='precip__value'>{Math.round(item.day.totalprecip_mm)}</span> <span className='precip__text'>mm</span>
+					<div className={styles.precip}>
+						<span className={styles.precipValue}>{Math.round(item.day.totalprecip_mm)}</span> <span className={styles.precipText}>{t("mm")}</span>
 					</div>
 			}
 
-			<div className='values__wind wind'>
-				<span className='wind__value'>{Math.round(item.day.maxwind_kph * 0.27)}</span> <span className='wind__text'>m/s</span>
+			<div className={styles.wind}>
+				<span className={styles.windValue}>{Math.round(item.day.maxwind_kph * 0.27)}</span> <span className={styles.windText}>{t("m/s")}</span>
 			</div>
 
 		</div>

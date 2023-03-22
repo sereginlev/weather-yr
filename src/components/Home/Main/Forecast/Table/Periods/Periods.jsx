@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Periods.scss';
+import styles from 'scss/modules/Home/Main/Table/Periods.module.scss';
 
 function Periods({ item }) {
 	const night = item.hour[0].condition.icon;
@@ -24,21 +24,21 @@ function Periods({ item }) {
 	const date = new Date(item.date).getDate();
 
 	return (
-		<div className='item__periods periods'>
+		<div className={styles.root}>
 			{
-				currentHour >= morningTime && currentDate === date ? <div className='periods__icon empty'></div> : <img className='periods__icon night' src={night} alt={nightText} />
+				currentHour >= morningTime && currentDate === date ? <div className={styles.empty}></div> : <img className={styles.night} src={night} alt={nightText} />
 			}
 
 			{
-				currentHour >= afternoonTime && currentDate === date ? <div className='periods__icon empty'></div> : <img className='periods__icon morning' src={morning} alt={morningText} />
+				currentHour >= afternoonTime && currentDate === date ? <div className={styles.empty}></div> : <img className={styles.morning} src={morning} alt={morningText} />
 			}
 
 			{
-				currentHour >= eveningTime && currentDate === date ? <div className='periods__icon empty'></div> : <img className='periods__icon afternoon' src={afternoon} alt={afternoonText} />
+				currentHour >= eveningTime && currentDate === date ? <div className={styles.empty}></div> : <img className={styles.afternoon} src={afternoon} alt={afternoonText} />
 			}
 
 			{
-				currentHour < nightTime && currentDate === date ? <div className='periods__icon empty'></div> : <img className='periods__icon evening' src={evening} alt={eveningText} />
+				currentHour < nightTime && currentDate === date ? <div className={styles.empty}></div> : <img className={styles.evening} src={evening} alt={eveningText} />
 			}
 
 		</div>

@@ -1,29 +1,29 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import './Headers.scss';
+import styles from 'scss/modules/Home/Main/Table/Headers.module.scss';
 
 function Headers() {
 	const { t } = useTranslation();
 
 	return (
-		<div className='table__headers headers'>
-			<div className='headers__empty empty'></div>
+		<div className={styles.root}>
+			<div className={styles.empty}></div>
 
-			<div className='headers__times times'>
-				<p className='times__text text'>{ t("night") }</p>
-				<p className='times__text text'>{ t("morning") }</p>
-				<p className='times__text text'>{ t("afternoon") }</p>
-				<p className='times__text text'>{ t("evening") }</p>
+			<div className={styles.times}>
+				<p className={styles.text}>{ t("night") }</p>
+				<p className={styles.text}>{ t("morning") }</p>
+				<p className={styles.text}>{ t("afternoon") }</p>
+				<p className={styles.text}>{ t("evening") }</p>
 			</div>
 
-			<div className='headers__weather weather'>
-				<p className='weather__text text'>{ t("temp") }</p>
-				<p className='weather__text text'>{ t("precip") }</p>
-				<p className='weather__text text'>{ t("wind") }</p>
+			<div className={styles.weather}>
+				<p className={styles.text}>{ t("temp") }</p>
+				<p className={styles.text}>{ t("precip") }</p>
+				<p className={styles.text}>{ t("wind") }</p>
 			</div>
 
-			<div className='headers__empty empty'></div>
+			<div className={styles.empty}></div>
 		</div>
 	)
 }
