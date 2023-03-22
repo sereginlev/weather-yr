@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Days.scss';
+import styles from 'scss/modules/MyLocations/Main/Table/Days.module.scss';
 
 function Days() {
 	const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -16,10 +16,10 @@ function Days() {
 	getImmediateDays();
 
 	return (
-		<div className='table__header header-list'>
+		<div className={styles.root}>
 			{
 				immediateDays.map((el, index) => (
-					<p className='header-list__text' key={index}>
+					<p className={styles.text} key={index}>
 						{el}
 					</p>
 				))

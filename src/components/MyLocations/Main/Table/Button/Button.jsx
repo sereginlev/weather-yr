@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import './Button.scss';
+import styles from 'scss/modules/MyLocations/Main/Table/Button.module.scss';
 
 import close from 'assets/icons/common icons/close.svg';
 import remove from 'assets/icons/common icons/color icons/remove.svg';
@@ -45,7 +45,7 @@ function Button({ location }) {
 
 	return (
 		<>
-			<button className='item__button' type='button' ref={buttonRef}>
+			<button className={styles.btn} type='button' ref={buttonRef}>
 				<svg  width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6C12.5523 6 13 5.55228 13 5Z" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 					<path d="M13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12Z" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -55,14 +55,14 @@ function Button({ location }) {
 
 			{
 				isOpen &&
-				<div className='item__button-popup' ref={popupRef}>
-					<div className='remove' onClick={() => removeFavLocation(location)}>
-						<img className='remove__icon' src={remove} alt='Remove from my locations' />
-						<p className='remove__text'>{ t("removeFromMyLocations") }</p>
+				<div className={styles.popup} ref={popupRef}>
+					<div className={styles.remove} onClick={() => removeFavLocation(location)}>
+						<img className={styles.icon} src={remove} alt='Remove from my locations' />
+						<p className={styles.removeText}>{ t("removeFromMyLocations") }</p>
 					</div>
-					<div className='close' onClick={() => setIsOpen(false)}>
-						<img className='close__icon' src={close} alt='Close popup' />
-						<p className='close__text'>{ t("close") }</p>
+					<div className={styles.close} onClick={() => setIsOpen(false)}>
+						<img className={styles.icon} src={close} alt='Close popup' />
+						<p className={styles.closeText}>{ t("close") }</p>
 					</div>
 				</div>
 			}
