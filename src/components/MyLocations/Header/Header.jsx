@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import './Header.scss';
+import styles from 'scss/modules/MyLocations/Header.module.scss';
 
 import Logo from './Logo/Logo';
 import Search from './Search/Search';
@@ -11,15 +11,15 @@ function Header() {
 	const { email } = useSelector(state => state.users.currentUser);
 
 	return (
-		<div className='header-mylocations'>
-			<div className='_container'>
-				<div className='header__block'>
+		<div className={styles.root}>
+			<div className={styles.container}>
+				<div className={styles.block}>
 
-					<p className='header__text'>{email}</p>
+					<p className={styles.text}>{email}</p>
 
 					<Logo />
 
-					<div className='header__block-user'>
+					<div className={styles.user}>
 						<Search />
 						<User />
 					</div>

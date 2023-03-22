@@ -1,0 +1,32 @@
+@import 'scss/variables.scss';
+
+.root {
+	display: block;
+}
+
+.container {
+	margin: 0 auto;
+	width: $container-width;
+	box-shadow: none;
+}
+
+.block {
+	display: flex;
+	align-items: center;
+	height: 130px;
+	position: relative;
+	justify-content: space-between;
+}
+
+.text {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	font-size: 16px;
+}
+
+.user {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+}
