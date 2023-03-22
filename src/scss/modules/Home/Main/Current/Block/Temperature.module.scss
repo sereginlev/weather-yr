@@ -1,0 +1,27 @@
+@import 'scss/variables.scss';
+
+.root {
+	display: flex;
+	align-items: baseline;
+	margin-right: 30px;
+}
+
+.icon {
+	width: 30px;
+	height: 30px;
+	opacity: 0.8;
+}
+
+.real {
+	color: $red;
+	font-size: 60px;
+}
+
+.text {
+	font-size: 18px;
+}
+
+.feels {
+	color: $red;
+	font-size: 20px;
+}

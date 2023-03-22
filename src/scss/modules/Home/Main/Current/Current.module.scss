@@ -1,0 +1,17 @@
+@import 'scss/variables.scss';
+
+.root {
+	background-color: #fff;
+	padding: 30px 40px;
+	margin-top: 20px;
+	border-radius: 8px;;
+	box-shadow: rgb(0 0 0 / 10%) 2px 0.125em 0.1875em;
+	max-width: 900px;
+	z-index: 1;
+	margin-bottom: 50px;
+}	
+
+.block {
+	display: flex;
+	align-items: flex-end;
+}	

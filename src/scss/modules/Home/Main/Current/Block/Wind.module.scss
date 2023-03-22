@@ -1,0 +1,28 @@
+@import 'scss/variables.scss';
+
+.root {
+	display: flex;
+	align-items: baseline;
+}
+
+.icon {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+	opacity: 0.8;
+}
+
+.value {
+	color: $black;
+	font-size: 60px;
+	margin-right: 5px;
+}
+
+.measure {
+	font-size: 20px;
+}
+
+.direction {
+	width: 30px;
+	height: 30px;
+}
