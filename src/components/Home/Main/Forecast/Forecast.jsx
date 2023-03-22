@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import './Forecast.scss';
+import styles from 'scss/modules/Home/Main/Forecast.module.scss';
 
 import Current from './Current/Current';
 import Table from './Table/Table';
@@ -13,7 +13,7 @@ function Forecast() {
 	const {  forecast: foundForecast } = useSelector(state => state.found.foundItem);
 
 	return (
-		<div className='forecast'>
+		<div className={styles.root}>
 			{
 				found !== undefined && Object.keys(found).length > 0 ?
 					<>

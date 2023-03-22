@@ -1,0 +1,11 @@
+@import 'scss/variables.scss';
+
+.root {
+	flex: 1 1 auto;
+}
+
+.container {
+	margin: 0 auto;
+	width: $container-width;
+	box-shadow: none;
+}

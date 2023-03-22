@@ -1,0 +1,48 @@
+@import 'scss/variables.scss';
+
+.root {
+	display: flex;
+	flex: 0 0 24%;
+	justify-content: space-between;
+	margin-left: 20px;
+	margin-right: 50px;
+}
+
+.temp {
+	width: 98px;
+	margin-left: -15px;
+	margin-right: 10px;
+	font-size: 24px;
+}
+
+.text {
+	color: $red;
+}
+
+.precip {
+	width: 65px;
+}
+
+.precipValue {
+	font-size: 24px;
+	color: $blue;
+}
+
+.precipText {
+	font-size: 18px;
+	color: $blue;
+}
+
+.wind {
+	display: block;
+}
+
+.windValue {
+	font-size: 24px;
+	color: $black;
+}
+
+.windText {
+	font-size: 18px;
+	color: $black;
+}

@@ -1,40 +1,26 @@
 import React from 'react';
 
-import './Table.scss';
+import styles from 'scss/modules/Home/Main/Table/Table.module.scss';
 
 import Headers from './Headers/Headers';
-import Days from './Days/Days';
-import Periods from './Periods/Periods';
-import Values from './Values/Values';
-import OpenHourlyForecast from './OpenHourlyForecast/OpenHourlyForecast';
 import Hourly from './Hourly/Hourly';
+import List from './List/List';
 
 function Table({ forecast }) {
 	const [isHourly, setIsHourly] = React.useState(false);
 	const [index, setIndex] = React.useState('');
 
+	//===при клике на день открывает почасовой прогноз========================================================================================
 	const onClickItem = (i) => {
 		setIsHourly(!isHourly);
 		setIndex(i);
 	}
 
 	return (
-		<div className='table'>
+		<div className={styles.root}>
 			<Headers />
 
-			<ul className='table__list list'>
-				{
-					forecast !== undefined &&
-					forecast.forecastday.map((item, i) => (
-						<li className='list__item item' key={i} onClick={() => onClickItem(i)}>
-							<Days item={item} />
-							<Periods item={item} />
-							<Values item={item} />
-							<OpenHourlyForecast />
-						</li>
-					))
-				}
-			</ul>
+			<List forecast={forecast} onClickItem={onClickItem}/>
 			
 			{
 				isHourly &&

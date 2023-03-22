@@ -1,0 +1,43 @@
+@import 'scss/variables.scss';
+
+.root {
+	display: flex;
+	position: relative;
+	left: 0;
+	width: 100%;
+	padding-bottom: 5px;
+
+	&:after {
+		content: '';
+		border-bottom: 1px solid $lightGrey;
+		width: 100%;
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+.time {
+	flex: 0 0 12%;
+}
+
+.weather {
+	flex: 0 0 15%;
+}
+
+.temp {
+	flex: 0 0 15%;
+}
+
+.precip {
+	flex: 0 0 15%;
+}
+
+.wind {
+	flex: 0 0 16%;
+}
+
+.condition {
+	display: block;
+}

@@ -1,0 +1,55 @@
+@import 'scss/variables.scss';
+
+.root {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+
+	&:after {
+		content: '';
+		border-bottom: 1px solid $lightGrey;
+		width: 100%;
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+.time {
+	font-size: 22px;
+	flex: 0 0 12%;
+}
+
+.weather {
+	flex: 0 0 18%;
+}
+
+.temp {
+	font-size: 22px;
+	color: $red;
+	flex: 0 0 16%;
+}
+
+.precip {
+	font-size: 22px;
+	color: $blue;
+	flex: 0 0 15%;
+}
+
+.wind {
+	font-size: 22px;
+	color: $black;
+	flex: 0 0 12%;
+}
+
+.icon {
+	width: 34px;
+	height: 34px;
+}
+
+.condition {
+	font-size: 20px;
+	color: $black;
+}

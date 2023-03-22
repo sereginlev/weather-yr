@@ -1,0 +1,29 @@
+.root {
+	display: flex;
+	justify-content: center;
+}
+
+.sun {
+	text-align: center;
+	display: block;
+	&:not(:last-child) {
+		margin-right: 30px;
+	}
+}
+
+.text {
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+.block {
+	display: block;
+}
+
+.icon {
+	margin-right: 5px;
+}
+
+.time {
+	font-size: 16px;
+}

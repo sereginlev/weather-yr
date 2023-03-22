@@ -1,0 +1,30 @@
+.root {
+	display: flex;
+	flex: 0 0 31%;
+	justify-content: space-between;
+	margin-right: 200px;
+}
+
+.empty {
+	width: 64px;
+	height: 64px;
+}
+
+.night {
+	margin-left: 10px;
+}
+
+.morning {
+	display: block;
+}
+
+.afternoon {
+	display: block;
+}
+
+.evening {
+	display: block;
+}
+
+
+

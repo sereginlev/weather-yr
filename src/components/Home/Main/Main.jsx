@@ -1,15 +1,16 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
-import './Main.scss';
+import styles from 'scss/modules/Home/Main/Main.module.scss';
 
 import Forecast from './Forecast/Forecast';
 
 function Main() {
-	
+
 	return (
-		<div className='main _container'>
-			<Forecast />
+		<div className={styles.root}>
+			<div className={styles.container}>
+				<Forecast />
+			</div>
 		</div>
 	)
 }
