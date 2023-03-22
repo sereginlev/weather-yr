@@ -1,0 +1,23 @@
+@import 'scss/variables.scss';
+
+.root {
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+	margin-bottom: 10px;
+
+	&:after {
+		content: '';
+		border-bottom: 1px solid $lightGrey;
+		width: 100%;
+		display: block;
+		position: absolute;
+		bottom: -10px;
+	}
+}
+
+.text {
+	font-size: 16px;
+	color: $grey;
+	flex: 0 0 14%;
+}

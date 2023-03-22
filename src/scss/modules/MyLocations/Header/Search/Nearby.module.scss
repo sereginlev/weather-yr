@@ -1,0 +1,61 @@
+@import 'scss/variables.scss';
+
+.nearbyWithItems {
+	padding: 20px;
+	font-size: 20px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	color: $blue;
+
+	&:after {
+		content: '';
+		border-bottom: 1px solid $lightGrey;
+		width: 100%;
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
+	&:before {
+		content: url('/assets/icons/common icons/color icons/nearby.svg');
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	&:hover {
+		border-radius: 20px 20px 0 0;
+		background-color: $blue;
+		color: #fff;
+
+		&:before {
+			content: url('/assets/icons/common icons/color icons/nearby-white.svg');
+		}
+	}
+}
+
+.nearbyWithoutItems {
+	padding: 20px;
+	font-size: 20px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	color: $blue;
+
+	&:before {
+		content: url('/assets/icons/common icons/color icons/nearby.svg');
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	&:hover {
+		border-radius: 20px 20px 20px 20px;
+		background-color: $blue;
+		color: #fff;
+
+		&:before {
+			content: url('/assets/icons/common icons/color icons/nearby-white.svg');
+		}
+	}
+}

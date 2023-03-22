@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import styles from 'scss/modules/MyLocations/Header.module.scss';
+import styles from 'scss/modules/MyLocations/Header/Header.module.scss';
 
 import Logo from './Logo/Logo';
 import Search from './Search/Search';

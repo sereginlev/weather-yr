@@ -1,0 +1,13 @@
+@import 'scss/variables.scss';
+
+.root {
+	position: absolute;
+	border-radius: 20px;
+	cursor: pointer;
+	width: 100%;
+	top: 60px;
+	left: 0;
+	background-color: #fff;
+	box-shadow: 2px 2px rgb(33 41 43 / 10%);
+	z-index: 2;
+}	

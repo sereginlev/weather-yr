@@ -1,0 +1,83 @@
+@import 'scss/variables.scss';
+
+.item {
+	padding: 20px;
+	font-size: 20px;
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	&:after {
+		content: '';
+		border-bottom: 1px solid $lightGrey;
+		width: 100%;
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
+	&:before {
+		content: url('/assets/icons/common icons/recent.svg');
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	&:last-child:after {
+		display: none;
+	}
+
+	&:last-child {
+		border-radius: 0 0 20px 20px;
+	}
+
+	&:hover {
+		background-color: $blue;
+		color: #fff;
+
+		&:before {
+			content: url('/assets/icons/common icons/color icons/recent.svg');
+		}
+	}
+}
+
+.itemFav {
+	padding: 20px;
+	font-size: 20px;
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	&:after {
+		content: '';
+		border-bottom: 1px solid $lightGrey;
+		width: 100%;
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+	&:before {
+		content: url('/assets/icons/common icons/favorite-color.svg');
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	&:last-child:after {
+		display: none;
+	}
+
+	&:last-child {
+		border-radius: 0 0 20px 20px;
+	}
+
+	&:hover {
+		background-color: $blue;
+		color: #fff;
+
+		&:before {
+			content: url('/assets/icons/common icons/favorite.svg');
+		}
+	}
+
+}

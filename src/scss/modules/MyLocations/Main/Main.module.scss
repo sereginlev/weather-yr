@@ -1,0 +1,17 @@
+@import 'scss/variables.scss';
+
+.root {
+	padding-top: 30px;
+	flex: 1 1 auto;
+}
+
+.container {
+	margin: 0 auto;
+	width: $container-width;
+	box-shadow: none;
+}
+
+.title {
+	font-size: 25px;
+	margin-bottom: 30px;
+}

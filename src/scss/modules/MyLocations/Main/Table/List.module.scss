@@ -1,0 +1,63 @@
+@import 'scss/variables.scss';
+
+.root {
+	display: flex;
+	flex-direction: column;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	padding: 10px 0;
+	position: relative;
+	justify-content: space-between;
+	
+	&:after {
+		content: '';
+		border-bottom: 1px solid $lightGrey;
+		width: 100%;
+		display: block;
+		position: absolute;
+		bottom: 0;
+	}
+
+	&:hover {
+		background-color: rgba(195, 208, 216, 0.3);
+		display: flex;
+		cursor: pointer;
+	}
+}
+
+.block {
+	display: flex;
+	align-items: center;
+	flex: 0 0 95%;
+}
+
+.title {
+	font-size: 20px;
+	flex: 0 0 60%;
+	margin-left: 10px;
+}
+
+.day {
+	display: flex;
+	align-items: center;
+	flex: 0 0 14%;
+}
+
+.icon {
+	display: block;
+}
+
+.plus {
+	font-size: 20px;
+	margin-left: 5px;
+	color: $red;
+}
+
+.minus{
+	font-size: 20px;
+	margin-left: 5px;
+	color: $blue;
+}

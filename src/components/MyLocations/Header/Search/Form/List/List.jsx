@@ -2,10 +2,13 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import './List.scss';
+import styles from 'scss/modules/MyLocations/Header/Search/List.module.scss';
 
 import { fetchFound } from 'redux/slices/foundSlice';
 import { fetchSearch } from 'redux/slices/searchSlice';
+
+import Nearby from './Nearby/Nearby';
+import Item from './Item/Item';
 
 function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby }) {
 	const dispatch = useDispatch();
@@ -13,16 +16,6 @@ function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby }) {
 	const listRef = React.useRef(); // ссылка на список найденных городов
 
 	const { searchItems } = useSelector(state => state.search); // массив из searchSlice(список городов, которые ищет пользователь)
-	const { favoriteItems } = useSelector(state => state.users.currentUser); // массив из данных о погоде любимых городов
-
-	//===при клике на список с избранными городами выводит его в Location==================================================================
-	const onClickFavorite = (e) => {
-		favoriteItems.map(item => {
-			if (e.target.innerHTML === `${item.location.name}, ${item.location.country}`) {
-				dispatch(fetchFound(`${item.location.name}, ${item.location.country}`))
-			}
-		})
-	}
 
 	//===при клике на элемент списка, обновляются стейты города и страны, который ищет пользователь и закрывается окно списка. стейты нужны для следующего запроса с погодными условиями для выбранного города========================================================================
 	const onClickFoundItem = (e) => {
@@ -53,32 +46,11 @@ function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby }) {
 	}, [searchValue]);
 
 	return (
-		<ul className='search__list' ref={listRef} onClick={onClickFoundItem}>
-			{
-				searchValue.length > 0 || favoriteItems.length > 0 ?
-					<li className='nearby' >
-						Nearby
-					</li>
-					:
-					<li className='_nearby' >
-						Nearby
-					</li>
-			}
+		<ul className={styles.root} ref={listRef} onClick={onClickFoundItem}>
 
+			<Nearby searchValue={searchValue} />
 
-			{
-				searchItems && isOpen && searchValue.length > 0 ?
-					searchItems.map(item => (
-						<li className='list__item' key={item.id}>
-							{item.name}, {item.country}
-						</li>
-					)) :
-					favoriteItems && favoriteItems.map((item, i) => (
-						<li className='list__item-fav' key={i} onClick={(e) => onClickFavorite(e)}>
-							{item.location.name}, {item.location.country}
-						</li>
-					))
-			}
+			<Item isOpen={isOpen} searchValue={searchValue} />
 		</ul>
 	)
 }
