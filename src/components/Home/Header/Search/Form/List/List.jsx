@@ -1,30 +1,23 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
-import './List.scss';
+import styles from 'scss/modules/MyLocations/Header/Search/List.module.scss';
 
 import { fetchFound } from 'redux/slices/foundSlice';
 import { fetchSearch } from 'redux/slices/searchSlice';
 
-function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby, isNearby }) {
-	const { t } = useTranslation();
+import Nearby from './Nearby/Nearby';
+import Item from './Item/Item';
+
+function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby }) {
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	const listRef = React.useRef(); // ссылка на список найденных городов
 
 	const { searchItems } = useSelector(state => state.search); // массив из searchSlice(список городов, которые ищет пользователь)
-	const { favoriteItems } = useSelector(state => state.users.currentUser); // массив из данных о погоде любимых городов
 
-	//===при клике на список с избранными городами выводит его в Location==================================================================
-	const onClickFavorite = (e) => {
-		favoriteItems.map(item => {
-			if (e.target.innerHTML === `${item.location.name}, ${item.location.country}`) {
-				dispatch(fetchFound(`${item.location.name}, ${item.location.country}`))
-			}
-		})
-	}
-
-	//===при клике на элемент списка, обновляются стейты города и страны, который ищет пользователь и закрывается окно списка. стейты нужны для следующего запроса с погодными условиями для выбранного города======================================================================
+	//===при клике на элемент списка, обновляются стейты города и страны, который ищет пользователь и закрывается окно списка. стейты нужны для следующего запроса с погодными условиями для выбранного города========================================================================
 	const onClickFoundItem = (e) => {
 		let name = [];
 
@@ -36,24 +29,13 @@ function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby, isNear
 			}
 		}
 
-		//===при клике на Nearby показывается прогноз по координатам пользователя============================================================= 
 		if (e.target.innerHTML === 'Nearby') {
 			setIsNearby(true);
-			navigator.geolocation.getCurrentPosition((pos) => {
-				let lat = Number(pos.coords.latitude.toFixed(2));
-				let lon = Number(pos.coords.longitude.toFixed(2));
-
-				const location = `q=${lat},${lon}`
-
-				dispatch(fetchFound(location));
-			});
-			setIsOpen(!isOpen);
-			setIsSearch(false);
-		} else {
-			setIsOpen(!isOpen);
-			setIsSearch(false);
-			setIsNearby(false);
 		}
+
+		setIsOpen(!isOpen);
+		setIsSearch(false);
+		navigate('/');
 	}
 
 	React.useEffect(() => {
@@ -64,31 +46,11 @@ function List({ isOpen, setIsOpen, searchValue, setIsSearch, setIsNearby, isNear
 	}, [searchValue]);
 
 	return (
-		<ul className='search__list' ref={listRef} onClick={onClickFoundItem}>
-			{
-				searchValue.length > 0 || favoriteItems.length > 0 ?
-					<li className='nearby'>
-						{ t("nearby") }
-					</li>
-					:
-					<li className='_nearby'>
-						{ t("nearby") }
-					</li>
-			}
+		<ul className={styles.root} ref={listRef} onClick={onClickFoundItem}>
 
-			{
-				searchItems && isOpen && searchValue.length > 0 ?
-					searchItems.map(item => (
-						<li className='list__item' key={item.id}>
-							{item.name}, {item.country}
-						</li>
-					)) :
-					favoriteItems && favoriteItems.map((item, i) => (
-						<li className='list__item-fav' key={i} onClick={(e) => onClickFavorite(e)}>
-							{item.location.name}, {item.location.country}
-						</li>
-					))
-			}
+			<Nearby searchValue={searchValue} />
+
+			<Item isOpen={isOpen} searchValue={searchValue} />
 		</ul>
 	)
 }

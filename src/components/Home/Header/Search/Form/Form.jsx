@@ -1,16 +1,15 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
-import List from './List/List';
-
-import './Form.scss';
+import styles from 'scss/modules/MyLocations/Header/Form.module.scss';
 
 import search from 'assets/icons/common icons/color icons/search.svg';
 import erase from 'assets/icons/common icons/close.svg';
 
-function Form({ searchValue, setSearchValue, setIsSearch, setIsNearby, isNearby }) {
-	const { t } = useTranslation();
+import List from './List/List';
+
+function Form({ searchValue, setSearchValue, setIsSearch }) {
 	const [isOpen, setIsOpen] = React.useState(true); // скрытие / отображение списка найденных городов
+	const [isNearby, setIsNearby] = React.useState(false);// отображение пункта Nearby при поиске
 	const inputRef = React.useRef(); // ссылка на инпут поиска нужного города
 	const btnRef = React.useRef(); // ссылка на кнопку Search
 	const formRef = React.useRef(); // ссылка на форму поиска
@@ -47,19 +46,19 @@ function Form({ searchValue, setSearchValue, setIsSearch, setIsNearby, isNearby 
 	}, [])
 
 	return (
-		<form className='search' ref={formRef}>
+		<form className={styles.root} ref={formRef}>
 
-			<img className='search__icon' src={search} alt='Search icon' />
-			<input className='search__input' ref={inputRef} autoFocus type='text' value={searchValue} placeholder={ t("searchPlaceholder") } onChange={onClickInput} />
+			<img className={styles.icon} src={search} alt='Search icon' />
+			<input className={styles.input} ref={inputRef} autoFocus type='text' value={searchValue} placeholder='Search by location or coordinates' onChange={onClickInput} />
 
 			{
 				searchValue &&
-				<img className='search__erase' src={erase} alt='Erase printed' onClick={clearSearchField} />
+				<img className={styles.erase} src={erase} alt='Erase printed' onClick={clearSearchField} />
 			}
 
 			{
 				isOpen && 
-				<List isOpen={isOpen} setIsOpen={setIsOpen} searchValue={searchValue} setIsSearch={setIsSearch} setIsNearby={setIsNearby} isNearby={isNearby}/>
+				<List isOpen={isOpen} setIsOpen={setIsOpen} searchValue={searchValue} setIsSearch={setIsSearch} setIsNearby={setIsNearby}/>
 			}
 		</form>
 	)
