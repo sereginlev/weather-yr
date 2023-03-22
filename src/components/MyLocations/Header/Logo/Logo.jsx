@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import './Logo.scss';
+import styles from 'scss/modules/Home/Header/Logo.module.scss';
 
 import logo from 'assets/icons/common icons/logo-blue.svg';
 import { fetchFound } from 'redux/slices/foundSlice';
@@ -18,9 +18,9 @@ function Logo() {
 	}
 
 	return (
-		<div className='logo' onClick={onClickLogo}>
+		<div className={styles.logo} onClick={onClickLogo}>
 			<Link to='/'>
-				<img className='logo__icon' src={logo} alt='Company Logo' width='50px' />
+				<img className={styles.icon} src={logo} alt='Company Logo' width='50px' />
 			</Link>
 		</div>
 	)
