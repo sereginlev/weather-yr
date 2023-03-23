@@ -12,25 +12,12 @@ import { removeUser } from 'redux/slices/userSlice';
 function User() {
 	const { t } = useTranslation();
 	const dispatch = useDispatch();
-	const [isOpen, setIsOpen] = React.useState(false);
-
-	const { isAuth } = useSelector(state => state.users.currentUser);
 
 	return (
-		<>
-			{
-				!isAuth ?
-					<Link to='/auth' className={styles.btn} type='button' onClick={() => setIsOpen(!isOpen)}>
-						<img className={styles.icon} src={login} alt='Login icon' />
-						{ t("login") }
-					</Link>
-					:
-					<button className={styles.btn} type='button' onClick={() => dispatch(removeUser())}>
-						<img className={styles.icon} src={login} alt='Login icon' />
-						{ t("logout") }
-					</button>
-			}
-		</>
+		<Link to='/' className={styles.btn} type='button' onClick={() => dispatch(removeUser())}>
+			<img className={styles.icon} src={login} alt='Login icon' />
+			{t("logout")}
+		</Link>
 	)
 }
 
