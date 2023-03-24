@@ -13,9 +13,29 @@
 	box-shadow: 2px 2px rgb(33 41 43 / 10%);
 	position: absolute;
 	top: 60px;
+
+	@media (max-width: 992px) {
+		max-width: 300px;
+	}
+
+	@media (max-width: 480px) {
+		max-width: 200px;
+	}
 }
 
 .block {
 	display: block;
+
+	@media (max-width: 767px) {
+		width: 200px;
+	}
+
+	@media (max-width: 445px) {
+		width: 150px;
+	}
+
+	@media (max-width: 380px) {
+		width: 100px;
+	}
 }
 

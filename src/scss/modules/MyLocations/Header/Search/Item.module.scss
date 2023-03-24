@@ -18,9 +18,23 @@
 	}
 
 	&:before {
-		content: url('/assets/icons/common icons/recent.svg');
+		content: '';
+		background-image: url('/assets/icons/common icons/recent.svg');
+		background-size: cover;
 		display: inline-block;
 		margin-right: 10px;
+		width: 30px;
+		height: 30px;
+
+		@media (max-width: 992px) {
+			width: 20px;
+			height: 20px;
+		}
+
+		@media (max-width: 480px) {
+			width: 15px;
+			height: 15px;
+		}
 	}
 
 	&:last-child:after {
@@ -38,6 +52,21 @@
 		&:before {
 			content: url('/assets/icons/common icons/color icons/recent.svg');
 		}
+	}
+
+	@media (max-width: 992px) {
+		padding: 15px;
+		font-size: 18px;
+	}
+
+	@media (max-width: 767px) {
+		padding: 10px;
+		font-size: 16px;
+	}
+
+	@media (max-width: 480px) {
+		padding: 5px 5px 5px 10px;
+		font-size: 13px;
 	}
 }
 
@@ -57,10 +86,25 @@
 		bottom: 0;
 		left: 0;
 	}
+
 	&:before {
-		content: url('/assets/icons/common icons/favorite-color.svg');
+		content: '';
+		background-image: url('/assets/icons/common icons/favorite-color.svg');
 		display: inline-block;
 		margin-right: 10px;
+		width: 30px;
+		height: 30px;
+		background-size: cover;
+
+		@media (max-width: 992px) {
+			width: 20px;
+			height: 20px;
+		}
+
+		@media (max-width: 480px) {
+			width: 15px;
+			height: 15px;
+		}
 	}
 
 	&:last-child:after {
@@ -80,4 +124,18 @@
 		}
 	}
 
+	@media (max-width: 992px) {
+		padding: 15px;
+		font-size: 18px;
+	}
+
+	@media (max-width: 767px) {
+		padding: 10px;
+		font-size: 16px;
+	}
+
+	@media (max-width: 480px) {
+		padding: 5px 5px 5px 10px;
+		font-size: 14px;
+	}
 }

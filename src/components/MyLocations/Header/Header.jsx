@@ -12,7 +12,7 @@ function Header() {
 
 	return (
 		<div className={styles.root}>
-			<div className={styles.container}>
+			<div className='container'>
 				<div className={styles.block}>
 
 					<p className={styles.text}>{email}</p>

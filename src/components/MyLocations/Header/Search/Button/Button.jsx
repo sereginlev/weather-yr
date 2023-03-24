@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import styles from 'scss/modules/Footer/Button.module.scss';
+import styles from 'scss/modules/ui/Button.module.scss';
 
 import search from 'assets/icons/common icons/color icons/search.svg';
 
@@ -41,7 +41,7 @@ function Button({ setSearchValue, setIsSearch }) {
 	return (
 			<button className={styles.btn} ref={btnRef} onClick={onClickSearch}>
 				<img className={styles.icon} src={search} alt='Search icon' />
-				{ t("search") }
+				<p className={styles.text}>{ t("search") }</p>
 			</button>
 		)
 	}

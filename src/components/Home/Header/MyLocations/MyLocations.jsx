@@ -17,7 +17,7 @@ function MyLocations() {
 				isAuth ?
 					<Link to='/mylocations' className={styles.btn} type='button'>
 						<img className={styles.icon} src={myLocations} alt='My Locations icon' />
-						{ t("mylocations") }
+						<p className={styles.text}>{ t("mylocations") }</p>
 					</Link>
 					:
 					null

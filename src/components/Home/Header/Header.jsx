@@ -14,7 +14,7 @@ function Header() {
 	const { email } = useSelector(state => state.users.currentUser);
 	return (
 		<div className={styles.root}>
-			<div className={styles.container}>
+			<div className='container'>
 				<div className={styles.block}>
 					{
 						email ?

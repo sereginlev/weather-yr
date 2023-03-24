@@ -22,12 +22,12 @@ function User() {
 				!isAuth ?
 					<Link to='/auth' className={styles.btn} type='button' onClick={() => setIsOpen(!isOpen)}>
 						<img className={styles.icon} src={login} alt='Login icon' />
-						{ t("login") }
+						<p className={styles.text}>{ t("login") }</p>
 					</Link>
 					:
 					<button className={styles.btn} type='button' onClick={() => dispatch(removeUser())}>
 						<img className={styles.icon} src={login} alt='Login icon' />
-						{ t("logout") }
+						<p className={styles.text}>{ t("logout") }</p>
 					</button>
 			}
 		</>

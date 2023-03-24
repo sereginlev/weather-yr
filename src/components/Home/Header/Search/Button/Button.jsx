@@ -32,7 +32,7 @@ function Button({ setSearchValue, setIsSearch }) {
 	return (
 			<button className={styles.btn} ref={btnRef}>
 				<img className={styles.icon} src={search} alt='Search icon' />
-				{ t("search") }
+				<p className={styles.text}>{ t("search") }</p>
 			</button>
 		)
 	}
