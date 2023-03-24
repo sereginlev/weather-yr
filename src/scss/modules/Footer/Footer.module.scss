@@ -1,14 +1,9 @@
 @import 'scss/libs/variables.scss';
+
 .root {
 	padding: 20px 0;
 	border-top: 0.0625em solid rgb(204, 204, 204);
 	background-color: #fff;
-}
-
-.container {
-	margin: 0 auto;
-	width: $container-width;
-	box-shadow: none;
 }
 
 .block {
@@ -20,4 +15,19 @@
 
 .text {
 	display: block;
+
+	@media (max-width: 1400px) {
+		font-size: 13px;
+		max-width: 500px;
+		text-align: center;
+	}
+
+	@media (max-width: 992px) {
+		font-size: 12px;
+		max-width: 300px;
+	}
+
+	@media (max-width: 767px) {
+		display: none;
+	}
 }

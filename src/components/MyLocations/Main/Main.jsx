@@ -10,7 +10,7 @@ function Main() {
 
 	return (
 		<div className={styles.root}>
-			<div className={styles.container}>
+			<div className='container'>
 				<h1 className={styles.title}>{ t("mylocations") }</h1>
 				<Table />
 			</div>

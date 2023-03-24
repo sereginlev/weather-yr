@@ -44,7 +44,7 @@ function Button() {
 	return (
 		<button className={styles.btn} type='button' ref={langRef}>
 			<img className={styles.icon} src={language} alt='Choose language icon' />
-			{ t("lang") }
+			<p className={styles.text}>{ t("lang") }</p>
 
 			{
 				isOpen &&

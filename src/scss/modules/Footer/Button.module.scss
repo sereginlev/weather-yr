@@ -7,11 +7,8 @@
 	display: flex;
 	align-items: center;
 	background-color: transparent;
-	font-size: 18px;
-	color: #006edb;
 	border: 1px solid rgba(0, 110, 219, 0.2);
 	border-radius: 10px;
-	margin-left: 20px;
 
 	&:hover {
 		background-color: rgba(0, 110, 219, 0.2);
@@ -22,12 +19,37 @@
 		background-color: rgba(0, 110, 219, 0.3);
 		border: 1px solid rgba(0, 110, 219, 1);
 	}
+
+	@media (max-width: 1400px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 1045px) {
+		font-size: 14px;
+	}
 }
 
 .icon {
 	width: 20px;
 	height: 20px;
 	margin-right: 5px;
+
+	@media (max-width: 1045px) {
+		margin-right: 0;
+	}
+}
+
+.text {
+	font-size: 18px;
+	color: #006edb;
+
+	@media (max-width: 1400px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 1045px) {
+		display: none;
+	}
 }
 
 .lang {

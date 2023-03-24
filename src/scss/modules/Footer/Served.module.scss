@@ -2,17 +2,57 @@
 
 .root {
 	display: block;
+
+	@media (max-width: 767px) {
+		display: flex;
+	}
+
+	@media (max-width: 480px) {
+		display: block;
+	}
 }
 
 .text {
 	font-size: 16px;
 	font-weight: 400;
+
+	@media(max-width: 1400px) {
+		font-size: 14px;
+	}
+
+	@media(max-width: 1045px) {
+		font-size: 12px;
+	}
+
+	@media (max-width: 767px) {
+		margin-right: 10px;
+	}
 }
 
 .list {
 	display: flex;
 }
 
-.link:not(:last-child) {
-	margin-right: 20px;
+.link {
+	&:not(:last-child) {
+		margin-right: 20px;
+
+		@media (max-width: 1400px) {
+			margin-right: 10px;
+		}
+	}
+
+	@media (max-width: 1400px) {
+		img {
+			width: 60px;
+			height: 20px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		img {
+			width: 40px;
+			height: 20px;
+		}
+	}
 }

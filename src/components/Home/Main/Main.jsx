@@ -8,7 +8,7 @@ function Main() {
 
 	return (
 		<div className={styles.root}>
-			<div className={styles.container}>
+			<div className='container'>
 				<Forecast />
 			</div>
 		</div>

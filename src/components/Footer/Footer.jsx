@@ -11,7 +11,7 @@ function Footer() {
 
 	return (
 		<div className={styles.root}>
-			<div className={styles.container}>
+			<div className='container'>
 				<div className={styles.block}>
 					<Served />
 

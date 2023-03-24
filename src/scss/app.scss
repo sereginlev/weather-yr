@@ -28,3 +28,21 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+
+.container {
+	margin: 0 auto;
+	max-width: $container-width;
+	padding: 0 15px;
+
+	@media (max-width: 1200px) {
+		max-width: 970px;
+	}
+
+	@media (max-width: 992px) {
+		max-width: 770px;
+	}
+
+	@media (max-width: 767px) {
+		max-width: none;
+	}
+}

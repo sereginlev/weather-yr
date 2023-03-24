@@ -13,7 +13,8 @@ function Socials() {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
-	const { users } = useSelector(state => state.users)
+	const { users } = useSelector(state => state.users);
+	const { currentUser } = useSelector(state => state.users);
 
 	//===вход с помощью гугл================================================================================================================
 	const handleSignInGoogle = () => {
@@ -33,7 +34,6 @@ function Socials() {
 								favoriteItems: users[i].favoriteItems,
 								locations: users[i].locations
 							}));
-							navigate('/');
 							break
 						} else {
 							dispatch(setUser({
@@ -52,7 +52,6 @@ function Socials() {
 								favoriteItems: [],
 								locations: []
 							}));
-							navigate('/');
 						}
 					}
 				} else {
@@ -72,12 +71,12 @@ function Socials() {
 						favoriteItems: [],
 						locations: []
 					}));
-					navigate('/');
 				}
 			})
 			.catch(error => {
 				const errorMessage = error.message;
 				const credential = GoogleAuthProvider.credentialFromError(error);
+				alert(errorMessage);
 				console.log(errorMessage);
 				console.log(credential);
 			})

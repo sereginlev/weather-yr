@@ -35,7 +35,7 @@ function Main() {
 				isSended ?
 					<>
 						<p className={styles.text}>{ t("authForgotPasswordConfirm") }</p>
-						<Link to='/auth' className='main-auth__btn' type='button'>{ t("authContinue") }</Link>
+						<Link to='/auth' className={styles.btn} type='button'>{ t("authContinue") }</Link>
 					</>
 					:
 					<>

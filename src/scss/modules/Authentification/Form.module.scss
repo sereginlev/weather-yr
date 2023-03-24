@@ -3,11 +3,14 @@
 .root {
 	display: flex;
 	flex-direction: column;
-	width: 700px;
 }
 
 .block {
 	position: relative;
+
+	@media (max-width: 480px) {
+		margin-bottom: 5px;
+	}
 }
 
 .label {
@@ -15,6 +18,20 @@
 	font-weight: 500;
 	line-height: 1.6rem;
 	margin-bottom: 10px;
+
+	@media (max-width: 992px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 14px;
+		margin-bottom: 5px;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 12px;
+		margin-bottom: 0;
+	}
 }
 
 .input {
@@ -26,6 +43,23 @@
 	margin-bottom: 20px;
 	font-weight: 600;
 	width: 100%;
+
+	@media (max-width: 992px) {
+		font-size: 16px;
+		margin-bottom: 15px;
+		padding: 8px 15px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 14px;
+		margin-bottom: 10px;
+		padding: 5px 10px;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 12px;
+		margin-bottom: 5px;
+	}
 }
 
 .icon {
@@ -35,6 +69,24 @@
 	right: 20px;
 	top: 37px;
 	cursor: pointer;
+
+	@media (max-width: 992px) {
+		width: 16px;
+		height: 16px;
+		top: 34px;
+	}
+
+	@media (max-width: 767px) {
+		width: 14px;
+		height: 14px;
+		top: 30px;
+	}
+
+	@media (max-width: 480px) {
+		width: 12px;
+		height: 12px;
+		top: 30px;
+	}
 }
 
 .btn {
@@ -55,6 +107,23 @@
 		transition: all 0s ease 0s;
 		background-color: rgb(102, 102, 102);
 	}
+
+	@media (max-width: 992px) {
+		padding: 10px;
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+
+	@media (max-width: 767px) {
+		padding: 10px;
+		font-size: 14px;
+		margin-bottom: 5px;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 12px;
+		margin-bottom: 5px;
+	}
 }
 
 .link {
@@ -70,5 +139,20 @@
 
 	&:hover {
 		text-decoration: none;
+	}
+
+	@media (max-width: 992px) {
+		font-size: 13px;
+		margin-bottom: 10px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 12px;
+		margin-bottom: 5px;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 11px;
+		margin-bottom: 5px;
 	}
 }
