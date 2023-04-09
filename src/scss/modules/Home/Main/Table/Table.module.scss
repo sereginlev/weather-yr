@@ -1,5 +1,10 @@
 @import 'scss/libs/variables.scss';
 
 .root {
-	display: block;
+	display: grid;
+	grid-template-rows: 0.1fr 1fr;
+
+	@media (max-width: 1400px) {
+		grid-template-rows: 30px 1fr;
+	}
 }

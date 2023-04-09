@@ -12,6 +12,9 @@ import MyLocations from './MyLocations/MyLocations';
 function Header() {
 	const { t } = useTranslation();
 	const { email } = useSelector(state => state.users.currentUser);
+
+	const [isOpen, setIsOpen] = React.useState(false);
+
 	return (
 		<div className={styles.root}>
 			<div className='container'>
@@ -20,7 +23,7 @@ function Header() {
 						email ?
 							<p className={styles.text}>{email}</p>
 							:
-							<p className={styles.text}>{ t("servedHeader") }</p>
+							<p className={styles.text}>{t("servedHeader")}</p>
 					}
 					<Logo />
 					<Search />

@@ -10,6 +10,10 @@
 	@media (max-width: 767px) {
 		margin-bottom: 0;
 	}
+
+	@media (max-width: 370px) {
+		width: 100px;
+	}
 }
 
 .name {

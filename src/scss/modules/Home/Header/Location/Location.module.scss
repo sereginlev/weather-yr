@@ -4,6 +4,9 @@
 	display: flex;
 	flex: 1 1 auto;
 	position: relative;
+
+	@media (max-width: 370px) {
+	}
 }
 
 .addFav {
@@ -27,15 +30,11 @@
 	display: block;
 
 	@media (max-width: 767px) {
-		width: 200px;
+		max-width: 200px;
 	}
 
-	@media (max-width: 445px) {
-		width: 150px;
-	}
-
-	@media (max-width: 380px) {
-		width: 100px;
+	@media (max-width: 450px) {
+		max-width: 150px;
 	}
 }
 

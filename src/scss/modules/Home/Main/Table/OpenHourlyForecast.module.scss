@@ -3,11 +3,21 @@
 .root {
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
+	grid-area: hourly;
+
+	@media (max-width: 1400px) {
+		justify-self: center;
+	}
 }
 
 .text {
 	font-size: 16px;
-	margin-right: 10px;
+
+	@media (max-width: 1500px) {
+		font-size: 14px;
+		display: none;
+	}
 }
 
 .icon {

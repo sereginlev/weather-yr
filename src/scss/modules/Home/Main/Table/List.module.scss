@@ -5,7 +5,10 @@
 }
 
 .item {
-	display: flex;
+	display: grid;
+	grid-template-columns: 0.5fr 1.1fr 0.2fr 0.7fr 0.4fr;
+	grid-template-areas: "days periods . values hourly";
+	column-gap: 20px;
 	padding: 20px 0;
 	align-items: center;
 	position: relative;
@@ -23,5 +26,25 @@
 	&:hover {
 		background-color: rgba(195, 208, 216, 0.3);
 		display: flex;
+	}
+
+	@media (max-width: 1400px) {
+		grid-template-areas: 
+			"days periods hourly" 
+			"values . hourly";
+		grid-template-columns: 0.8fr 0.6fr 0.15fr;
+		row-gap: 0;
+		padding: 10px 0;
+	}
+
+	@media (max-width: 992px) {
+		padding: 5px 0;
+		grid-template-columns: 0.5fr 0.7fr 0.15fr;
+	}
+
+	@media (max-width: 530px) {
+		grid-template-areas: "days values hourly";
+		grid-template-columns: 0.4fr 0.5fr 0.1fr;
+		column-gap: 0;
 	}
 }

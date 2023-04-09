@@ -2,9 +2,13 @@
 
 .root {
 	display: flex;
-	flex: 0 0 31%;
 	justify-content: space-between;
-	margin-right: 200px;
+	grid-area: periods;
+	// max-height: 40px;
+
+	@media (max-width: 530px) {
+		display: none;
+	}
 }
 
 .empty {
@@ -12,21 +16,18 @@
 	height: 64px;
 }
 
-.night {
-	margin-left: 10px;
-}
-
-.morning {
+.icon {
 	display: block;
+	width: 64px;
+	height: 64px;
+
+	@media (max-width: 1500px) {
+		width: 50px;
+		height: 50px;
+	}
+
+	@media (max-width: 767px) {
+		width: 40px;
+		height: 40px;
+	}
 }
-
-.afternoon {
-	display: block;
-}
-
-.evening {
-	display: block;
-}
-
-
-

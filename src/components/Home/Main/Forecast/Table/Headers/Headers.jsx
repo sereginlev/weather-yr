@@ -8,7 +8,7 @@ function Headers() {
 
 	return (
 		<div className={styles.root}>
-			<div className={styles.empty}></div>
+			{/* <div className={styles.empty}></div> */}
 
 			<div className={styles.times}>
 				<p className={styles.text}>{ t("night") }</p>
@@ -17,13 +17,15 @@ function Headers() {
 				<p className={styles.text}>{ t("evening") }</p>
 			</div>
 
+			{/* <div className={styles.empty}></div> */}
+
 			<div className={styles.weather}>
 				<p className={styles.text}>{ t("temp") }</p>
 				<p className={styles.text}>{ t("precip") }</p>
 				<p className={styles.text}>{ t("wind") }</p>
 			</div>
 
-			<div className={styles.empty}></div>
+			{/* <div className={styles.empty}></div> */}
 		</div>
 	)
 }

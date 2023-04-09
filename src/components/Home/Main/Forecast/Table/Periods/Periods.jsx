@@ -26,19 +26,19 @@ function Periods({ item }) {
 	return (
 		<div className={styles.root}>
 			{
-				currentHour >= morningTime && currentDate === date ? <div className={styles.empty}></div> : <img className={styles.night} src={night} alt={nightText} />
+				currentHour >= morningTime && currentDate === date ? <div className={styles.empty}></div> : <img className={styles.icon} src={night} alt={nightText} />
 			}
 
 			{
-				currentHour >= afternoonTime && currentDate === date ? <div className={styles.empty}></div> : <img className={styles.morning} src={morning} alt={morningText} />
+				currentHour >= afternoonTime && currentDate === date ? <div className={styles.empty}></div> : <img className={styles.icon} src={morning} alt={morningText} />
 			}
 
 			{
-				currentHour >= eveningTime && currentDate === date ? <div className={styles.empty}></div> : <img className={styles.afternoon} src={afternoon} alt={afternoonText} />
+				currentHour >= eveningTime && currentDate === date ? <div className={styles.empty}></div> : <img className={styles.icon} src={afternoon} alt={afternoonText} />
 			}
 
 			{
-				currentHour < nightTime && currentDate === date ? <div className={styles.empty}></div> : <img className={styles.evening} src={evening} alt={eveningText} />
+				currentHour < nightTime && currentDate === date ? <div className={styles.empty}></div> : <img className={styles.icon} src={evening} alt={eveningText} />
 			}
 
 		</div>

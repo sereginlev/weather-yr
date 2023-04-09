@@ -1,26 +1,91 @@
 @import 'scss/libs/variables.scss';
+
 .root {
 	display: flex;
 	align-items: baseline;
 	margin-right: 30px;
+
+	@media (max-width: 1200px) {
+		margin-right: 20px;
+	}
+
+	@media (max-width: 992px) {
+		margin-right: 10px;
+	}
+
+	@media (max-width: 530px) {
+		margin-right: 5px;
+	}
 }
 
 .icon {
 	width: 30px;
 	height: 30px;
 	opacity: 0.8;
+
+
+	@media (max-width: 1200px) {
+		width: 25px;
+		height: 25px;
+	}
+
+	@media (max-width: 992px) {
+		width: 20px;
+		height: 20px;
+	}
+
+	@media (max-width: 530px) {
+		width: 15px;
+		height: 15px;
+	}
 }
 
 .real {
 	color: $red;
 	font-size: 60px;
+
+	@media (max-width: 1200px) {
+		font-size: 50px;
+	}
+
+	@media (max-width: 992px) {
+		font-size: 40px;
+	}
+
+	@media (max-width: 530px) {
+		font-size: 30px;
+	}
 }
 
 .text {
 	font-size: 18px;
+
+	@media (max-width: 1200px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 992px) {
+		font-size: 15px;
+	}
+
+	@media (max-width: 530px) {
+		font-size: 14px;
+	}
 }
 
 .feels {
 	color: $red;
 	font-size: 20px;
+
+	@media (max-width: 1200px) {
+		font-size: 18px;
+	}
+
+	@media (max-width: 992px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 530px) {
+		font-size: 14px;
+	}
 }

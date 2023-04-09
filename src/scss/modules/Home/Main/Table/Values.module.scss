@@ -2,17 +2,45 @@
 
 .root {
 	display: flex;
-	flex: 0 0 24%;
 	justify-content: space-between;
-	margin-left: 20px;
-	margin-right: 50px;
+	grid-area: values;
+
+	@media (max-width: 1400px) {
+		padding-left: 15px;
+		max-width: 200px;
+	}
+
+	@media (max-width: 767px) {
+		max-width: 170px;
+		padding-left: 10px;
+	}
+
+	@media (max-width: 530px) {
+		padding-left: 0;
+		justify-items: center;
+	}
+
+	@media (max-width: 480px) {
+		justify-content: center;
+	}
 }
 
 .temp {
-	width: 98px;
-	margin-left: -15px;
-	margin-right: 10px;
 	font-size: 24px;
+
+	@media (max-width: 1500px) {
+		font-size: 22px;
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	@media (max-width: 1400px) {
+		font-size: 18px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 16px;
+	}
 }
 
 .text {
@@ -20,17 +48,41 @@
 }
 
 .precip {
-	width: 65px;
+	display: block;
 }
 
 .precipValue {
 	font-size: 24px;
 	color: $blue;
+
+	@media (max-width: 1400px) {
+		font-size: 18px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 480px) {
+		display: none;
+	}
 }
 
 .precipText {
 	font-size: 18px;
 	color: $blue;
+
+	@media (max-width: 1400px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 14px;
+	}
+
+	@media (max-width: 480px) {
+		display: none;
+	}
 }
 
 .wind {
@@ -40,9 +92,33 @@
 .windValue {
 	font-size: 24px;
 	color: $black;
+
+	@media (max-width: 1400px) {
+		font-size: 18px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 480px) {
+		display: none;
+	}
 }
 
 .windText {
 	font-size: 18px;
 	color: $black;
+
+	@media (max-width: 1400px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 14px;
+	}
+
+	@media (max-width: 480px) {
+		display: none;
+	}
 }
