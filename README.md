@@ -1,6 +1,6 @@
 # Weather YR
 
-Weather YR is app based on [yr.no](https://www.yr.no/en) site and [WeatherAPI](https://www.weatherapi.com/).
+Weather YR is responsive (adaptive layout) app based on [yr.no](https://www.yr.no/en) site and [WeatherAPI](https://www.weatherapi.com/).
 
 When loaded, it determines the user's location (city and country) and shows the current weather forecast, a three-day forecast, and an hourly forecast for a day.
 
