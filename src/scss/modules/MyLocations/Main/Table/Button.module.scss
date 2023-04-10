@@ -19,6 +19,20 @@
 			}
 		}
 	}
+
+	@media (max-width: 767px) {
+		svg {
+			width: 25px;
+			height: 25px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
 }
 
 .popup {
@@ -30,6 +44,14 @@
 	border-radius: 10px;
 	box-shadow: 2px 2px rgba(33, 41, 43, 0.1);
 	z-index: 2;
+
+	@media (max-width: 992px) {
+		padding: 15px;
+	}
+
+	@media (max-width: 767px) {
+		padding: 10px;
+	}
 }
 
 .remove {
@@ -48,11 +70,35 @@
 	&:active {
 		background-color: rgba(198, 0, 0, 0.2);
 	}
+
+	@media (max-width: 992px) {
+		padding: 8px;
+	}
+
+	@media (max-width: 767px) {
+		padding: 5px;
+	}
+
+	@media (max-width: 480px) {
+		margin-bottom: 10px;
+	}
 }
 
 .removeText {
 	color: $red;
 	font-size: 20px;
+
+	@media (max-width: 992px) {
+		font-size: 18px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 14px;
+	}
 }
 
 .close {
@@ -71,15 +117,45 @@
 	&:active {
 		background-color: rgba(86, 97, 108, 0.4);
 	}
+
+	@media (max-width: 992px) {
+		padding: 8px;
+	}
+
+	@media (max-width: 767px) {
+		padding: 5px;
+	}
 }
 
 .closeText {
 	color: $black;
 	font-size: 20px;
+
+	@media (max-width: 992px) {
+		font-size: 18px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 14px;
+	}
 }
 
 .icon {
 	width: 25px;
 	height: 25px;
 	margin-right: 5px;
+
+	@media (max-width: 992px) {
+		width: 20px;
+		height: 20px;
+	}
+
+	@media (max-width: 767px) {
+		width: 15px;
+		height: 15px;
+	}
 }

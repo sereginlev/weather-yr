@@ -1,8 +1,11 @@
 @import 'scss/libs/variables.scss';
 
 .root {
-	padding-top: 30px;
 	flex: 1 1 auto;
+	margin-bottom: 30px;
+
+	@media (max-width: 767px) {
+	}
 }
 
 .container {
@@ -14,4 +17,13 @@
 .title {
 	font-size: 25px;
 	margin-bottom: 30px;
+
+	@media (max-width: 1200px) {
+		font-size: 23px;
+		margin-bottom: 20px;
+	}
+
+	@media (max-width: 992px) {
+		font-size: 21px;
+	}
 }

@@ -1,7 +1,8 @@
 @import 'scss/libs/variables.scss';
 
 .root {
-	display: block;
+	display: flex;
+	flex-direction: column;
 }
 
 .text {

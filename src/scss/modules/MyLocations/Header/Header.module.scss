@@ -10,6 +10,10 @@
 	height: 130px;
 	position: relative;
 	justify-content: space-between;
+
+	@media (max-width: 767px) {
+		height: 100px;
+	}
 }
 
 .text {

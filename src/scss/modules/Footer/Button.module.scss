@@ -27,6 +27,14 @@
 	@media (max-width: 1045px) {
 		font-size: 14px;
 	}
+
+	@media (max-width: 992px) {
+		padding: 10px;
+	}
+
+	@media (max-width: 767px) {
+		padding: 5px;
+	}
 }
 
 .icon {
@@ -36,6 +44,11 @@
 
 	@media (max-width: 1045px) {
 		margin-right: 0;
+	}
+
+	@media (max-width: 767px) {
+		width: 18px;
+		height: 18px;
 	}
 }
 

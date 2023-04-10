@@ -4,6 +4,18 @@
 	padding: 20px 0;
 	border-top: 0.0625em solid rgb(204, 204, 204);
 	background-color: #fff;
+
+	@media (max-width: 992px) {
+		padding: 15px 0;
+	}
+
+	@media (max-width: 767px) {
+		padding: 10px 0;
+	}
+
+	@media (max-width: 480px) {
+		padding: 5px 0;
+	}
 }
 
 .block {
