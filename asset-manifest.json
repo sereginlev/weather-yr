@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/weather-yr/static/css/main.16a2fb3c.css",
-    "main.js": "/weather-yr/static/js/main.94ac2a48.js",
+    "main.js": "/weather-yr/static/js/main.826a7138.js",
     "static/media/logo-met.svg": "/weather-yr/static/media/logo-met.b05a2b1275d1491192d2c6903689ccdb.svg",
     "static/media/logo-blue.svg": "/weather-yr/static/media/logo-blue.66ed4a2a1b0f821f93f12f8221ac1998.svg",
     "static/media/language.svg": "/weather-yr/static/media/language.0e1a130dceb97a79db8e61a323be7db3.svg",
@@ -29,10 +29,10 @@
     "static/media/view-password.svg": "/weather-yr/static/media/view-password.bc05a0cb437d19c6e4d912f7123c6e01.svg",
     "static/media/arrow-left.svg": "/weather-yr/static/media/arrow-left.df0da846f7814cd1a6cfeee41231fe4e.svg",
     "main.16a2fb3c.css.map": "/weather-yr/static/css/main.16a2fb3c.css.map",
-    "main.94ac2a48.js.map": "/weather-yr/static/js/main.94ac2a48.js.map"
+    "main.826a7138.js.map": "/weather-yr/static/js/main.826a7138.js.map"
   },
   "entrypoints": [
     "static/css/main.16a2fb3c.css",
-    "static/js/main.94ac2a48.js"
+    "static/js/main.826a7138.js"
   ]
 }
