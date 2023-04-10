@@ -2,8 +2,12 @@
 
 .root {
 	position: relative;
-	display: flex;
 	align-items: center;
+	justify-items: center;
+	display: grid;
+	column-gap: 10px;
+	grid-template-columns: 0.1fr 0.2fr 0.3fr 0.3fr 0.3fr 0.3fr;
+	grid-template-areas: "time weather temp precip wind condition";
 	width: 100%;
 
 	&:after {
@@ -15,41 +19,85 @@
 		bottom: 0;
 		left: 0;
 	}
+
+	@media (max-width: 767px) {
+		grid-template-columns: 0.1fr 0.2fr 0.3fr 0.3fr 0.3fr;
+		grid-template-areas: "time weather temp precip wind";
+	}
 }
 
 .time {
 	font-size: 22px;
-	flex: 0 0 12%;
+	grid-area: 'time';
+
+	@media (max-width: 1100px) {
+		font-size: 20px;
+	}
+
 }
 
 .weather {
-	flex: 0 0 18%;
+	grid-area: 'weather';
+
+	@media (max-width: 1200px) {
+		img {
+			width: 50px;
+			height: 50px;
+		}
+	}
 }
 
 .temp {
 	font-size: 22px;
 	color: $red;
-	flex: 0 0 16%;
+	grid-area: 'temp';
+
+	@media (max-width: 1100px) {
+		font-size: 20px;
+	}
 }
 
 .precip {
 	font-size: 22px;
 	color: $blue;
-	flex: 0 0 15%;
+	grid-area: 'precip';
+
+	@media (max-width: 1100px) {
+		font-size: 20px;
+	}
 }
 
 .wind {
 	font-size: 22px;
 	color: $black;
-	flex: 0 0 12%;
+	grid-area: 'wind';
+
+	@media (max-width: 1100px) {
+		font-size: 20px;
+	}
 }
 
 .icon {
 	width: 34px;
 	height: 34px;
+
+	@media (max-width: 1100px) {
+		height: 30px;
+		width: 30px;
+	}
 }
 
 .condition {
 	font-size: 20px;
 	color: $black;
+	grid-area: 'condition';
+	text-align: center;
+
+	@media (max-width: 1200px) {
+		font-size: 18px;
+	}
+
+	@media (max-width: 767px) {
+		display: none;
+	}
 }

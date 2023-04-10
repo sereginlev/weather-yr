@@ -16,6 +16,11 @@
 	@media (max-width: 530px) {
 		margin-right: 5px;
 	}
+
+	@media (max-width: 480px) {
+		margin-right: 0;
+		margin-bottom: 5px;
+	}
 }
 
 .icon {
@@ -38,6 +43,10 @@
 	@media (max-width: 530px) {
 		width: 15px;
 		height: 15px;
+	}
+
+	@media (max-width: 480px) {
+		margin-right: 5px;
 	}
 }
 

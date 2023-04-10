@@ -1,7 +1,11 @@
 @import 'scss/libs/variables.scss';
 
 .root {
-	display: flex;
+	display: grid;
+	grid-template-columns: 0.1fr 0.2fr 0.3fr 0.3fr 0.3fr 0.3fr;
+	grid-template-areas: "time weather temp precip wind condition";
+	justify-items: center;
+	column-gap: 10px;
 	position: relative;
 	left: 0;
 	width: 100%;
@@ -16,28 +20,89 @@
 		bottom: 0;
 		left: 0;
 	}
+
+	@media (max-width: 767px) {
+		grid-template-columns: 0.1fr 0.2fr 0.3fr 0.3fr 0.3fr;
+		grid-template-areas: "time weather temp precip wind";
+	}
+
+	@media (max-width: 480px) {
+		display: none;
+	}
 }
 
 .time {
-	flex: 0 0 12%;
+	grid-area: 'time';
+
+	@media (max-width: 1200px) {
+		font-size: 14px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 13px;
+	}
 }
 
 .weather {
-	flex: 0 0 15%;
+	grid-area: 'weather';
+
+	@media (max-width: 1200px) {
+		font-size: 14px;
+	}
+
+	
+	@media (max-width: 767px) {
+		font-size: 13px;
+	}
 }
 
 .temp {
-	flex: 0 0 15%;
+	grid-area: 'temp';
+
+	@media (max-width: 1200px) {
+		font-size: 14px;
+	}
+
+	
+	@media (max-width: 767px) {
+		font-size: 13px;
+	}
 }
 
 .precip {
-	flex: 0 0 15%;
+	grid-area: 'precip';
+
+	@media (max-width: 1200px) {
+		font-size: 14px;
+	}
+
+	
+	@media (max-width: 767px) {
+		font-size: 13px;
+	}
 }
 
 .wind {
-	flex: 0 0 16%;
+	grid-area: 'wind';
+
+	@media (max-width: 1200px) {
+		font-size: 14px;
+	}
+
+	
+	@media (max-width: 767px) {
+		font-size: 13px;
+	}
 }
 
 .condition {
-	display: block;
+	grid-area: 'condition';
+
+	@media (max-width: 1200px) {
+		font-size: 14px;
+	}
+
+	@media (max-width: 767px) {
+		display: none;
+	}
 }
