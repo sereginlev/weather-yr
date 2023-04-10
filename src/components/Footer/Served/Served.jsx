@@ -14,10 +14,10 @@ function Served() {
 			<span className={styles.text}>{ t("served") }</span>
 
 			<div className={styles.list}>
-				<a className={styles.link} href="http://www.nrk.no">
+				<a className={styles.link} href="http://www.nrk.no" target="_blank">
 					<img src={nrkLogo} alt='NRK logo' />
 				</a>
-				<a className={styles.link} href="http://www.met.no">
+				<a className={styles.link} href="http://www.met.no" target="_blank">
 					<img src={metLogo} alt='MET logo' />
 				</a>
 			</div>
