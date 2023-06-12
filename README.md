@@ -12,7 +12,7 @@ __Forecast consist's of:__
 
 ## Installation
 
-Just follow this [link](https://witchcult-today.github.io/weather-yr/).
+Follow this [link](https://sereginlev.github.io/weather-yr/).
 
 ## Usage
 
@@ -45,5 +45,3 @@ __Authorized user can:__
 - __[React Router Dom](https://reactrouter.com/en/main)__
 - __[SCSS](https://sass-lang.com/)__
 - __[CSS Modules](https://github.com/css-modules/css-modules)__
-
-### Thank you for your time!!! 😊
