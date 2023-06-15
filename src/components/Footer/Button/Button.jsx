@@ -5,8 +5,13 @@ import styles from 'scss/modules/Footer/Button.module.scss';
 
 import language from 'assets/icons/common icons/color icons/language.svg';
 
+import english from 'assets/icons/common icons/english.png';
+import russian from 'assets/icons/common icons/russian.png';
+
 function Button() {
 	const [isOpen, setIsOpen] = React.useState(false);
+	const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+
 	const langRef = React.useRef(); // ссылка на кнопку Choose Language
 	const rusRef = React.useRef(); // ссылка на кнопку Русский 
 	const enRef = React.useRef(); // ссылка на кнопку English
@@ -22,7 +27,7 @@ function Button() {
 		const onClickOutsideBtn = (e) => {
 			if (e.composedPath().includes(langRef.current)) {
 				setIsOpen(!isOpen);
-				langRef.current.classList.add(styles.opened); 
+				langRef.current.classList.add(styles.opened);
 			} else {
 				setIsOpen(false);
 				langRef.current.classList.remove(styles.opened);
@@ -39,18 +44,40 @@ function Button() {
 		return () => {
 			document.removeEventListener('click', onClickOutsideBtn);
 		}
-	}, [langRef, isOpen, rusRef, enRef])
+	}, [langRef, isOpen, rusRef, enRef]);
+
+	React.useEffect(() => {
+		const handleWindowWidth = () => {
+			setWindowWidth(window.innerWidth);
+		}
+
+		window.addEventListener('resize', handleWindowWidth);
+
+		return () => {
+			window.removeEventListener('resize', handleWindowWidth);
+		}
+	}, [])
 
 	return (
 		<button className={styles.btn} type='button' ref={langRef}>
 			<img className={styles.icon} src={language} alt='Choose language icon' />
-			<p className={styles.text}>{ t("lang") }</p>
+			<p className={styles.text}>{t("lang")}</p>
 
 			{
 				isOpen &&
 				<div className={styles.lang}>
-					<span className={styles.langBtn} ref={rusRef} onClick={() => changeLanguage("ru")}>Русский</span>
-					<span className={styles.langBtn} ref={enRef} onClick={() => changeLanguage("en")}>English</span>
+					{
+						windowWidth > 1050 ?
+							<>
+								<span className={styles.langBtn} ref={rusRef} onClick={() => changeLanguage("ru")}>Русский</span>
+								<span className={styles.langBtn} ref={enRef} onClick={() => changeLanguage("en")}>English</span>
+							</>
+							:
+							<>
+								<img className={styles.img} src={russian} alt='Russian language' onClick={() => changeLanguage("ru")}/>
+								<img className={styles.img} src={english} alt='English language' onClick={() => changeLanguage("en")}/>
+							</>
+					}
 				</div>
 			}
 		</button>

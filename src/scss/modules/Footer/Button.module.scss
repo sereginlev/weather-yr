@@ -74,6 +74,23 @@
 	width: 100%;
 	border-radius: 10px;
 	box-shadow: rgb(0 0 0 / 10%) 2px 0.125em 0.1875em;
+
+	@media (max-width: 1050px) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 10px 5px;
+	}
+}
+
+.img {
+	width: 20px;
+	height: 20px;
+
+	&:not(:first-child) {
+		margin-top: 5px;
+	}
 }
 
 .langBtn {
