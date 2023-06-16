@@ -10,7 +10,7 @@ __Forecast consist's of:__
 - _Precipitation_
 - _Wind speed and direction_
 
-![Weather YR screenshot 1(https://github.com/sereginlev/weather-yr/blob/master/screenshot-1.png)
+![Weather YR screenshot 1](https://github.com/sereginlev/weather-yr/blob/master/screenshot-1.png)
 ![Weather YR screenshot 2](https://github.com/sereginlev/weather-yr/blob/master/screenshot-2.png)
 ![Weather YR screenshot 3](https://github.com/sereginlev/weather-yr/blob/master/screenshot-3.png)
 ![Weather YR screenshot 4](https://github.com/sereginlev/weather-yr/blob/master/screenshot-4.png)
