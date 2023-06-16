@@ -12,10 +12,6 @@ __Forecast consist's of:__
 
 ![Weather YR screenshot](https://github.com/sereginlev/weather-yr/blob/master/weather.jpg)
 
-## Installation
-
-Follow this [link](https://sereginlev.github.io/weather-yr/).
-
 ## Usage
 
 __User can:__
